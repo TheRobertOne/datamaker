@@ -43,7 +43,7 @@
             border: 1px solid red;
             box-sizing: border-box;
             overflow: auto;
-            min-width: 200px;
+            min-width: 600px;
             padding: 20px;
         }
 
@@ -69,6 +69,21 @@
         .add-box select {
             height: 30px;
             width: 150px;
+        }
+
+        .item-block {
+            background: #d5c0ff40;
+            margin-bottom: 20px;
+            padding: 10px;
+
+        }
+
+        .item-block-del {
+            height: 30px;
+        }
+
+        .item-block-del span {
+            float: right;
         }
 
 
@@ -199,7 +214,9 @@
             var itemDel = document.createElement('div');
             itemId.innerHTML = `id:${apiData[i]['id']}`;
             itemType.innerHTML = `type:${apiData[i]['type']}`;
-            itemDel.innerHTML = `删除${apiData[i]['id']}`;
+            itemDel.innerHTML = `
+            <span>删除</span>
+            `;
             itemDel.item = apiData[i];
             itemDel.onclick = function (e) {
                 var clickId = e.target.item;
@@ -218,6 +235,8 @@
                 render(temArr);
 
             };
+            itemBox.className = "item-block";
+            itemDel.className = 'item-block-del';
             itemBox.appendChild(itemId);
             itemBox.appendChild(itemType);
             itemBox.appendChild(itemDel);
