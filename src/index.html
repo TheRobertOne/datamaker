@@ -572,11 +572,9 @@
         var addItem = dataType[addType.value];
         addItem = JSON.parse(JSON.stringify(addItem));
         console.log(addItem);
-        apiData.push({
-            id: len + 1,
-            page: len,
-            type: addType.value
-        });
+        addItem['id'] = len + 1;
+        addItem['page'] = len;
+        apiData.push(addItem);
         apiData.sort((a, b) => {
             return a['id'] - b['id'];
         });
@@ -601,6 +599,7 @@
             itemDelSpan.item = apiData[i];
             itemDelSpan.onclick = function (e) {
                 var clickId = e.target.item;
+                console.log(clickId);
                 var temArr = [];
                 for (var j = 0; j < apiData.length; j++) {
                     if (apiData[j]['id'] + '' != clickId['id'] + '') {
