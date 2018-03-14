@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>data数据生成</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <style>
+        div,
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .content-box {
+            flex: 1;
+            overflow: auto;
+            padding: 20px 10px;
+        }
+
+        #dv {
+            float: right;
+        }
+
+        #addDv {
+            display: inline-block;
+            color: blue;
+            cursor: pointer;
+            padding: 5px;
+            user-select: none;
+        }
+
+        .add-box {
+            height: 50px;
+            line-height: 50px;
+            padding-left: 50px;
+        }
+
+        .add-box input {
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        .add-box select {
+            height: 30px;
+            width: 150px;
+        }
+
+
+
+        .box {
+            margin: 2px;
+            display: flex;
+            background: #d5c0ff40;
+            align-items: center;
+        }
+
+        .item {
+            width: 50px;
+            display: inline-block;
+
+            padding: 5px 5px;
+        }
+
+        .item-u {
+            width: 300px;
+        }
+
+        .item-s {
+            display: inline-block;
+        }
+
+        .item-img {
+            display: inline-block;
+
+            height: 36px;
+
+        }
+
+        .item-img img {
+            display: block;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="add-box">
+            <span>id:</span>
+            <input type="text" id="addInp" />
+            <span>type:</span>
+            <select id="addType">
+                <option value="display" selected>display:展示</option>
+                <option value="cation">cation:分类</option>
+                <option value="drow">drow:笔划练习题大写A</option>
+                <option value="jigsaw">jigsaw:拼图题</option>
+                <option value="read">read:跟读</option>
+                <option value="survey">survey:普通互动题 问卷</option>
+                <option value="choice">choice:单选</option>
+            </select>
+
+            <div id="addDv">添加</div>
+        </div>
+        <div class="content-box">
+            <div id="dv"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+
+
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("get", '/images');
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            var data = ajax.responseText;
+            data = JSON.parse(data);
+
+            var str = '';
+            data.forEach(function (item) {
+                str += `<div class="box">
+        <input type="text" class="item item-u" value='${item['name']}' />
+        <span class="item-s">宽:</span>
+        <input type="text"  class="item" value="${item['w']}"/>
+        <span class="item-s">高:</span>
+        <input type="text"  class="item" value="${item['h']}"/>
+        <div class="item-img">
+            <img src="${item['url']}" alt=""  />
+            </div>
+        
+        </div>`;
+
+            });
+            dv.innerHTML = str;
+        }
+    };
+    ajax.send(null);
+
+</script>
+
+<script>
+    var apiData = [];
+    addDv.onclick = function () {
+        apiData.push({
+            id: addInp.value,
+            type: addType.value
+        });
+        console.log(apiData);
+    };
+
+</script>
