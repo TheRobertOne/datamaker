@@ -2,12 +2,14 @@ const Koa = require('koa');
 const fs = require('fs');
 const path = require('path');
 const staticServer = require('koa-static');
+const bodyParser = require('koa-bodyparser');
 const app = new Koa();
 
 
 const router = require('./router');
 
 function start() {
+    app.use(bodyParser());
     app.use(router.routes());
     app.use(router.allowedMethods());
     app.use(staticServer(path.join(__dirname, '../courseimg')));
