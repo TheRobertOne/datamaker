@@ -31,10 +31,20 @@
             flex: 1;
             overflow: auto;
             padding: 20px 10px;
+            position: relative;
         }
 
         #dv {
             float: right;
+        }
+
+        .api-box {
+            position: fixed;
+            border: 1px solid red;
+            box-sizing: border-box;
+            overflow: auto;
+            min-width: 200px;
+            padding: 20px;
         }
 
         #addDv {
@@ -119,8 +129,11 @@
         </div>
         <div class="content-box">
             <div id="dv"></div>
-            <div id="contentItemBox"></div>
+            <div class="api-box">
+                <div id="contentItemBox"></div>
+            </div>
         </div>
+
 
     </div>
 
@@ -161,6 +174,9 @@
 </script>
 
 <script>
+    var el = document.querySelector('.content-box');
+    var con = document.querySelector('.api-box');
+    con.style.height = el.scrollHeight - 60 + 'px';
     var apiData = [];
     addDv.onclick = function () {
         apiData.push({
@@ -175,7 +191,7 @@
         apiData.map((item) => {
             str += `
             <div>id:${item['id']}</div>
-<div>id:${item['type']}</div>
+<div>type:${item['type']}</div>
             `;
         })
         contentItemBox.innerHTML = str;
