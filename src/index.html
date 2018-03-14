@@ -43,7 +43,7 @@
 
             box-sizing: border-box;
             overflow: auto;
-            min-width: 600px;
+            width: 600px;
             padding: 20px;
         }
 
@@ -96,6 +96,7 @@
             color: #fff;
             padding: 4px 10px;
             border-radius: 4px;
+            margin-right: 10px;
         }
 
 
@@ -133,12 +134,51 @@
             display: block;
             height: 100%;
         }
+
+        .displayMask {
+            position: fixed;
+            top: 10px;
+            left: 11px;
+            background: #f6f6f6;
+            width: 600px;
+            height: 300px;
+            padding: 20px;
+            box-shadow: 2px 2px 7px #252525;
+        }
+
+        .displayMask select {
+            margin-bottom: 20px;
+        }
+
+        .displayMask input {
+            height: 30px;
+            width: 200px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .displayMaskHihhen {
+            display: none;
+        }
+
+        #displayOk {
+            display: inline-block;
+
+            user-select: none;
+            cursor: pointer;
+            background: #0095ff;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
 <body>
     <div class="content">
         <div class="add-box">
+            <span>插入位置(不填默认插入到最后，0插入到第一位，类推):</span>
+            <input type="text" id="insertInp">
             <span>type:</span>
             <select id="addType">
                 <option value="display" selected>display:展示</option>
@@ -162,7 +202,32 @@
 
 
     </div>
+    <div class="displayMask displayMaskHihhen">
+        图片对齐方式
+        <select id="displayRadioinp">
+            <option value="1" selected>居中</option>
+            <option value="2">自定义</option>
+        </select>
 
+        <div>
+            x:
+            <input type="text" id="displayjuzhongX">
+        </div>
+        <div>
+            y默认90:
+            <input type="text" id="displayjuzhongY">
+        </div>
+
+        <div>
+            图片地址:
+            <input type="text" id="displayImg">
+        </div>
+        <div id='displayOk'>
+            确认
+        </div>
+
+
+    </div>
 </body>
 
 </html>
@@ -539,11 +604,11 @@
             var str = '';
             data.forEach(function (item) {
                 str += `<div class="box">
-        <input type="text" class="item item-u" value='${item['name']}' />
+        <span  class="item item-u" >${item['name']}</span>
         <span class="item-s">宽:</span>
-        <input type="text"  class="item" value="${item['w']}"/>
+        <span  class="item " >${item['w']}</span>
         <span class="item-s">高:</span>
-        <input type="text"  class="item" value="${item['h']}"/>
+        <span  class="item " >${item['h']}</span>
         <div class="item-img">
             <img src="${item['url']}" alt=""  />
             </div>
@@ -571,14 +636,29 @@
         var len = apiData.length;
         var addItem = dataType[addType.value];
         addItem = JSON.parse(JSON.stringify(addItem));
-        console.log(addItem);
-        addItem['id'] = len + 1;
-        addItem['page'] = len;
-        apiData.push(addItem);
-        apiData.sort((a, b) => {
-            return a['id'] - b['id'];
+
+        if ((insertInp.value || '').trim() === '') {
+
+            addItem['id'] = len + 1;
+            addItem['page'] = len;
+            apiData.push(addItem);
+
+
+        } else {
+            addItem['id'] = parseInt(insertInp.value);
+            addItem['ipaged'] = parseInt(insertInp.value) - 1;
+            apiData.splice(parseInt(insertInp.value), 0, addItem);
+
+        }
+
+        apiData = apiData.map(function (item, index) {
+            item['id'] = index + 1;
+            item['page'] = index;
+            return item;
         });
+
         render(apiData);
+
 
     };
 
@@ -591,15 +671,72 @@
             var itemType = document.createElement('div');
             var itemDel = document.createElement('div');
             var itemDelSpan = document.createElement('span');
+
             itemId.innerHTML = `id:${apiData[i]['id']}`;
             itemType.innerHTML = `type:${apiData[i]['type']}`;
+            itemId.className = 'item-block-item';
+            itemType.className = 'item-block-item';
+            itemBox.appendChild(itemId);
+            itemBox.appendChild(itemType);
+
+            //题型display
+            if (apiData[i]['type'] == 'display') {
+                var bodyImgs = document.createElement('div');
+
+                if (apiData[i]['data']['body']) {
+                    bodyImgs.innerHTML = JSON.stringify(apiData[i]['data']['body']);
+                    itemBox.appendChild(bodyImgs)
+                }
+
+                //添加图片
+                var addDisplayPic = document.createElement('span');
+
+                addDisplayPic.innerHTML = '添加图片';
+                addDisplayPic.item = apiData[i];
+                addDisplayPic.onclick = function () {
+
+                    var displayMask = document.querySelector('.displayMask');
+                    displayMask.className = 'displayMask';
+                    //displayMask displayMaskHihhen
+                    if (addDisplayPic.item['data']['body']) {
+                        addDisplayPic.item['data']['body'].push(
+                            { "image": "", "pos": { "x": (1024 / 2) - (605 / 2), "y": 90 } }
+                        );
+                    } else {
+                        addDisplayPic.item['data']['body'] = [];
+                        addDisplayPic.item['data']['body'].push(
+                            { "image": "", "pos": { "x": (1024 / 2) - (605 / 2), "y": 90 } }
+                        );
+                    }
+                    displayOk.innerHTML = '确认,' + '图片数量:' + addDisplayPic.item['data']['body'].length;
+                    displayRadioinp.addPic = addDisplayPic.item['data']['body'];
+                };
+
+                itemDel.appendChild(addDisplayPic);
+
+                //删除图片
+                var delDisplayPic = document.createElement('span');
+                delDisplayPic.innerHTML = '删除图片';
+                delDisplayPic.item = apiData[i];
+
+                delDisplayPic.onclick = function () {
+                    delete delDisplayPic.item['data']['body'];
+                    render(window.apiData);
+                };
+                itemDel.appendChild(delDisplayPic);
+
+
+
+
+
+            }
             itemDelSpan.innerHTML = '删除';
-            itemDel.innerHTML = '';
-            itemDel.appendChild(itemDelSpan);
+
+
             itemDelSpan.item = apiData[i];
             itemDelSpan.onclick = function (e) {
                 var clickId = e.target.item;
-                console.log(clickId);
+
                 var temArr = [];
                 for (var j = 0; j < apiData.length; j++) {
                     if (apiData[j]['id'] + '' != clickId['id'] + '') {
@@ -617,16 +754,51 @@
             };
             itemBox.className = "item-block";
             itemDel.className = 'item-block-del';
-            itemId.className = 'item-block-item';
-            itemType.className = 'item-block-item';
-            itemBox.appendChild(itemId);
-            itemBox.appendChild(itemType);
+            itemDel.appendChild(itemDelSpan);
+
             itemBox.appendChild(itemDel);
             contentItemBox.appendChild(itemBox);
+
+
         }
     }
 
 
+    displayOk.onclick = function () {
+        var val = displayRadioinp.value + '';
+        var arrs = displayRadioinp.addPic || [];
+        var len = arrs.length;
+
+        if (len > 0) {
+
+            var obj = arrs[len - 1];
+
+
+            var x = (displayjuzhongX.value || '').trim();
+            x = x === '' ? 0 : x;
+            var y = (displayjuzhongY.value || '').trim();
+
+            y = y === '' ? 0 : y;
+
+
+            if (val === '1') {
+
+                obj['pos']['x'] = (1024 / 2) - (parseInt(x) / 2);
+
+                obj['pos']['y'] = parseInt(y) || 90;
+                obj['image'] = (displayImg.value || '').trim();
+            } else {
+                obj['pos']['x'] = parseInt(x);
+
+                obj['pos']['y'] = parseInt(y) || 90;
+                obj['image'] = (displayImg.value || '').trim();
+            }
+        }
+
+        var el = document.querySelector('.displayMask');
+        el.className = 'displayMask displayMaskHihhen';
+        render(apiData);
+    }
 
 
 </script>
