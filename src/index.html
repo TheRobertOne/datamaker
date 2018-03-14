@@ -119,6 +119,7 @@
         </div>
         <div class="content-box">
             <div id="dv"></div>
+            <div id="contentItemBox"></div>
         </div>
 
     </div>
@@ -167,6 +168,21 @@
             type: addType.value
         });
         console.log(apiData);
+        var str = '';
+        apiData.sort((a, b) => {
+            return a['id'] - b['id'];
+        });
+        apiData.map((item) => {
+            str += `
+            <div>id:${item['id']}</div>
+<div>id:${item['type']}</div>
+            `;
+        })
+        contentItemBox.innerHTML = str;
+
     };
+
+
+
 
 </script>
