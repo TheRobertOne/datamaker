@@ -112,8 +112,6 @@
 <body>
     <div class="content">
         <div class="add-box">
-            <span>id:</span>
-            <input type="text" id="addInp" />
             <span>type:</span>
             <select id="addType">
                 <option value="display" selected>display:展示</option>
@@ -124,13 +122,14 @@
                 <option value="survey">survey:普通互动题 问卷</option>
                 <option value="choice">choice:单选</option>
             </select>
-
             <div id="addDv">添加</div>
         </div>
         <div class="content-box">
             <div id="dv"></div>
             <div class="api-box">
-                <div id="contentItemBox"></div>
+                <div id="contentItemBox">
+
+                </div>
             </div>
         </div>
 
@@ -141,8 +140,6 @@
 
 </html>
 <script>
-
-
 
     var ajax = new XMLHttpRequest();
     ajax.open("get", '/images');
@@ -179,24 +176,54 @@
     con.style.height = el.scrollHeight - 60 + 'px';
     var apiData = [];
     addDv.onclick = function () {
+        var len = apiData.length;
         apiData.push({
-            id: addInp.value,
+            id: len + 1,
+            page: len,
             type: addType.value
         });
-        console.log(apiData);
-        var str = '';
         apiData.sort((a, b) => {
             return a['id'] - b['id'];
         });
-        apiData.map((item) => {
-            str += `
-            <div>id:${item['id']}</div>
-<div>type:${item['type']}</div>
-            `;
-        })
-        contentItemBox.innerHTML = str;
+        render(apiData);
 
     };
+
+    function render(apiData) {
+
+        contentItemBox.innerHTML = '';
+        for (var i = 0; i < apiData.length; i++) {
+            var itemBox = document.createElement('div');
+            var itemId = document.createElement('div');
+            var itemType = document.createElement('div');
+            var itemDel = document.createElement('div');
+            itemId.innerHTML = `id:${apiData[i]['id']}`;
+            itemType.innerHTML = `type:${apiData[i]['type']}`;
+            itemDel.innerHTML = `删除${apiData[i]['id']}`;
+            itemDel.item = apiData[i];
+            itemDel.onclick = function (e) {
+                var clickId = e.target.item;
+                var temArr = [];
+                for (var j = 0; j < apiData.length; j++) {
+                    if (apiData[j]['id'] + '' != clickId['id'] + '') {
+                        temArr.push(apiData[j]);
+                    }
+                }
+                temArr = temArr.map(function (item, index) {
+                    item['id'] = index + 1;
+                    item['page'] = index;
+                    return item;
+                });
+                window.apiData = temArr;
+                render(temArr);
+
+            };
+            itemBox.appendChild(itemId);
+            itemBox.appendChild(itemType);
+            itemBox.appendChild(itemDel);
+            contentItemBox.appendChild(itemBox);
+        }
+    }
 
 
 
