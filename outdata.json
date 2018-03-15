@@ -1,34 +1,104 @@
 [
     {
-        "type": "display",
+        "type": "cation",
         "id": 1,
-        "state": "01",
+        "state": "10",
         "page": 0,
         "content_type": "",
         "data": {
-            "background_image": "",
-            "overviewImage": "",
-            "pos": {
-                "x": "(1024 / 2) - (530 / 2)",
+            "title_img": "",
+            "text_pos": {
+                "x": "(1024 / 2) - (451 / 2)",
                 "y": 90
             },
-            "title": "",
-            "text_pos": {
-                "x": 460,
-                "y": 30
-            },
-            "body": [
+            "item": [
                 {
-                    "image": "",
+                    "image": "./image/courseimg/tset/z5.png",
                     "pos": {
-                        "x": "(1024 / 2) - (605 / 2)",
-                        "y": 90
+                        "x": 50,
+                        "y": 0
                     }
                 }
             ],
-            "font_size": 68,
-            "fill_color": "#0a152a"
-        }
+            "groupA": [
+                {
+                    "image": "./image/courseimg/tset/z1.png",
+                    "pos": {
+                        "x": 87,
+                        "y": 445
+                    },
+                    "answer": [
+                        0,
+                        1,
+                        2
+                    ]
+                },
+                {
+                    "image": "./image/courseimg/tset/z2.png",
+                    "pos": {
+                        "x": 687,
+                        "y": 445
+                    },
+                    "answer": [
+                        3,
+                        4,
+                        5
+                    ]
+                }
+            ],
+            "groupB": [
+                {
+                    "image": "./image/courseimg/tset/a.png",
+                    "pos": {
+                        "x": 210,
+                        "y": 220
+                    }
+                },
+                {
+                    "image": "./image/courseimg/tset/a.png",
+                    "pos": {
+                        "x": 210,
+                        "y": 120
+                    }
+                },
+                {
+                    "image": "./image/courseimg/tset/a.png",
+                    "pos": {
+                        "x": 410,
+                        "y": 160
+                    }
+                },
+                {
+                    "image": "./image/courseimg/tset/A1.png",
+                    "pos": {
+                        "x": 420,
+                        "y": 260
+                    }
+                },
+                {
+                    "image": "./image/courseimg/tset/A1.png",
+                    "pos": {
+                        "x": 540,
+                        "y": 280
+                    }
+                },
+                {
+                    "image": "./image/courseimg/tset/A1.png",
+                    "pos": {
+                        "x": 300,
+                        "y": 10
+                    }
+                },
+                {
+                    "image": "./image/game/ant_03.png",
+                    "pos": {
+                        "x": 400,
+                        "y": 400
+                    }
+                }
+            ]
+        },
+        "ipaged": -1
     },
     {
         "type": "jigsaw",
@@ -115,6 +185,78 @@
                     }
                 }
             ]
+        }
+    },
+    {
+        "type": "choice",
+        "page": 2,
+        "content_type": "",
+        "content": "",
+        "id": 3,
+        "state": "04",
+        "data": {
+            "title": "",
+            "titleImage": "./image/courseimg/30/30.png",
+            "text": "",
+            "font_size": 42,
+            "fill_color": "#0a152a",
+            "text_pos": {
+                "x": "(1024 / 2) - (643 / 2)",
+                "y": 90
+            },
+            "background": "",
+            "q_image": "",
+            "qAdimation": "rotate",
+            "animation": "",
+            "pos": {
+                "x": 0,
+                "y": 171
+            },
+            "body": [
+                {
+                    "text": "",
+                    "voice": "",
+                    "allow": true,
+                    "image": "./image/courseimg/30/30-01.png",
+                    "pos": {
+                        "x": 34,
+                        "y": 250
+                    },
+                    "size": {
+                        "w": 343,
+                        "h": 119
+                    }
+                },
+                {
+                    "text": "",
+                    "voice": "",
+                    "allow": true,
+                    "image": "./image/courseimg/30/30-02.png",
+                    "pos": {
+                        "x": 34,
+                        "y": 391
+                    },
+                    "size": {
+                        "w": 343,
+                        "h": 119
+                    }
+                },
+                {
+                    "text": "",
+                    "voice": "",
+                    "allow": true,
+                    "image": "./image/courseimg/30/30-03.png",
+                    "pos": {
+                        "x": 34,
+                        "y": 532
+                    },
+                    "size": {
+                        "w": 343,
+                        "h": 119
+                    }
+                }
+            ],
+            "answer": 0
         }
     }
 ]

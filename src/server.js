@@ -13,6 +13,7 @@ function start() {
     app.use(router.routes());
     app.use(router.allowedMethods());
     app.use(staticServer(path.join(__dirname, '../courseimg')));
+    app.use(staticServer(path.join(__dirname, '../static')));
 
     app.listen(8001, () => {
         console.log(`server is running at port 8001`);

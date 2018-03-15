@@ -7,10 +7,7 @@ const dataType = require('./data');
 
 const router = new Router();
 
-router.get('/', async (ctx, next) => {
-    ctx.type = 'html';
-    ctx.body = fs.createReadStream(path.join(__dirname, './index.html'));
-});
+
 
 router.get('/data', async (ctx, next) => {
     ctx.type = 'json';

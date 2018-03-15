@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//tv.firstleap.cn/common/js/phaser2.6.1.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        html,body{width: 100%;height: 100%}
+        #direct{
+            width:100%;
+            height:100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="direct"></div>
+    <script>
+        var game = new Phaser.Game(1024,768,Phaser.CANVAS,'direct');
+            game.state.add("boot",function () {
+                this.init = function () {
+                    game.scale.pageAlignHorizontally = true; //水平居中
+                    game.scale.pageAlignVertically = true; //垂直居中
+                    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+                }
+                this.preload = function () {
+                    game.load.image('test',"http://vides-test.oss-cn-beijing.aliyuncs.com/app/image/courseimg/12/12.png");
+                }
+                this.create = function () {
+                    var draw_init_pos = {x:(1024-449)/2,y:450}
+                    console.log("init11");
+                    var img = game.add.image((1024-449)/2,90,"test") //param x,y,key
+                    var btn_a = game.add.text(75,350,"A",{fill:"#FFFFFF",fontSize:60,fontWeight:"normal",boundsAlignH: "center", boundsAlignV: "middle"}) //param x,y,key
+                    var btn_b = game.add.text(475,350,"B",{fill:"#FFFFFF",fontSize:60,fontWeight:"normal",boundsAlignH: "center", boundsAlignV: "middle"}) //param x,y,key
+                    var draw = game.add.text(draw_init_pos.x,draw_init_pos.y,"draw",{fill:"#FFFFFF",fontSize:80,fontWeight:"normal",boundsAlignH: "center", boundsAlignV: "middle"}) //param x,y,key
+                        btn_a.inputEnabled = true;
+                        btn_b.inputEnabled = true;
+                        draw.inputEnabled = true;//开启拖拽
+                        draw.input.enableDrag();//开启拖拽
+                        btn_a.events.onInputDown.add(TapBtn) //点击事件
+                        btn_b.events.onInputDown.add(TapBtn) //点击事件
+                        draw.events.onDragStart.add(function (x,y) {
+                            console.log("开始拖拽")
+                        })
+                        draw.events.onDragUpdate.add(function (x,y) {
+                            // console.log(x.position)
+                            // var p = x.position
+                            // var m = game.physics.arcade.intersects(draw,btn_a); //碰撞检测
+                            // console.log(m)
+                        })
+                        draw.events.onDragStop.add(function (x,y) {
+                            // console.log(x.position)
+                            var p = x.position
+                            var m = game.physics.arcade.intersects(draw,btn_a); //碰撞检测
+                            console.log(m)
+                            if(m){
+                                game.add.tween(draw).to(btn_a.position, 300, null, true, 0, 0).onComplete.add(function () {
+                                    console.log("移动完成")
+                                });
+                            }else{
+                                game.add.tween(draw).to(draw_init_pos, 300, null, true, 0, 0).onComplete.add(function () {
+                                    console.log("回到原点")
+                                });
+                            }
+
+                        })
+
+                    console.log(btn_a.events)
+                }
+            })
+            game.state.start("boot");//进入预加载
+
+
+        function TapBtn() {
+            console.log(1111)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>data数据生成</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="add-box">
+            <span>插入位置(不填默认插入到最后，0插入到第一位，类推):</span>
+            <input type="text" id="insertInp">
+            <span>type:</span>
+            <select id="addType">
+                <option value="display" selected>display:展示</option>
+                <option value="cation">cation:分类</option>
+                <option value="drow">drow:笔划练习题大写A</option>
+                <option value="jigsaw">jigsaw:拼图题</option>
+                <option value="read">read:跟读</option>
+                <option value="survey">survey:普通互动题 问卷</option>
+                <option value="choice">choice:单选</option>
+            </select>
+            <div id="addDv">添加</div>
+            <div id="genData">生成数据</div>
+        </div>
+        <div class="content-box">
+            <div id="dv"></div>
+            <div class="api-box">
+                <div id="contentItemBox">
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="displayMask displayMaskHihhen">
+        图片对齐方式
+        <select id="displayRadioinp">
+            <option value="1" selected>居中</option>
+            <option value="2">自定义</option>
+        </select>
+
+        <div>
+            x:
+            <input type="text" id="displayjuzhongX">
+        </div>
+        <div>
+            y默认90:
+            <input type="text" id="displayjuzhongY">
+        </div>
+
+        <div>
+            图片地址:
+            <input type="text" id="displayImg">
+        </div>
+        <div id='displayOk'>
+            确认
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./datatype.js"></script>
+<script src="./getimages.js"></script>
+
+<script src="./main.js"></script>
