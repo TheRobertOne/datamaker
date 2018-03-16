@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //通过 npm 安装
 const webpack = require('webpack'); //访问内置的插件
 const path = require('path');
+console.log('webpack 打包。。phaser练习');
 
 const config =
     {
@@ -40,8 +41,15 @@ const config =
             new HtmlWebpackPlugin({
                 template: './h5.html',
                 filename: './h5g.html'
-            })
-        ]
+            }),
+
+        ],
+        watch: true,
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: 1000
+        }
+
     };
 
 module.exports = config;
