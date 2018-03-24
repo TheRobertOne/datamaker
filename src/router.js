@@ -46,8 +46,9 @@ router.post('/add', async (ctx, next) => {
 
 })
 router.get('/images', async (ctx, next) => {
-
-    var result = walk(path.join(__dirname, '../courseimg'));
+    let dir = '/Users/pingyiluo/Desktop/courseimg';
+    // var result = walk(path.join(__dirname, '../courseimg'));
+    var result = walk(dir);
 
     result = result.filter((item) => {
         return (item || '').indexOf('.DS_Store') < 0;

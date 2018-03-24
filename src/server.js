@@ -15,6 +15,7 @@ function start() {
     app.use(router.allowedMethods());
     app.use(staticServer(path.join(__dirname, '../courseimg')));
     app.use(staticServer(path.join(__dirname, '../static')));
+    app.use(staticServer('/Users/pingyiluo/Desktop/courseimg'));
 
     app.listen(8001, () => {
         console.log('课件辅助工具生成data');
