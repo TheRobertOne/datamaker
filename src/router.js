@@ -7,14 +7,6 @@ const dataType = require('./data');
 
 const router = new Router();
 
-
-
-router.get('/data', async (ctx, next) => {
-    ctx.type = 'json';
-    ctx.body = dataType;
-});
-
-
 router.post('/add', async (ctx, next) => {
     // console.log(ctx.request.body)
     let result = await new Promise((resolve, reject) => {
@@ -39,12 +31,11 @@ router.post('/add', async (ctx, next) => {
     } else {
         ctx.throw(500);
     }
+});
 
 
 
 
-
-})
 router.get('/images', async (ctx, next) => {
     let dir = '/Users/pingyiluo/Desktop/courseimg';
     // var result = walk(path.join(__dirname, '../courseimg'));
