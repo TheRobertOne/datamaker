@@ -17,9 +17,7 @@ function get_value() {
     return null;
 };
 if (what == null) {
-    var str;
-    str = '$hello$';
-    json_data = JSON.parse(str);
+    json_data = '$hello$';
 } else {
     json_data = what;
 };

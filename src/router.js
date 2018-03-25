@@ -7,10 +7,11 @@ const dataType = require('./data');
 
 const router = new Router();
 
-router.post('/add', async (ctx, next) => {
+router.post('/generate', async (ctx, next) => {
     // console.log(ctx.request.body)
+    let reqData = JSON.stringify(ctx.request.body);
     let result = await new Promise((resolve, reject) => {
-        fs.writeFile(path.join(__dirname, '../outdata.json'), JSON.stringify(ctx.request.body), (err) => {
+        fs.writeFile(path.join(__dirname, '../static/outdata.json'), reqData, (err) => {
 
             if (err) {
                 reject(err);
@@ -22,8 +23,23 @@ router.post('/add', async (ctx, next) => {
             }
         });
     });
+    var readStr = fs.readFileSync(path.join(__dirname, '../static/sourcedata.js'), 'utf-8');
+    readStr = readStr.replace(`'$hello$'`, reqData);
 
-    if (result === 200) {
+    let myresult = await new Promise((resolve, reject) => {
+
+        fs.writeFile('/Users/pingyiluo/Desktop/TV/app/js/data.js', readStr, (err) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(200);
+            }
+        });
+    })
+
+
+
+    if (myresult === 200) {
         ctx.response.type = 'json';
         ctx.body = [{
             code: 'success'

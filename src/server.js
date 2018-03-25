@@ -13,7 +13,6 @@ function start() {
     app.use(bodyParser());
     app.use(router.routes());
     app.use(router.allowedMethods());
-    app.use(staticServer(path.join(__dirname, '../courseimg')));
     app.use(staticServer(path.join(__dirname, '../static')));
     app.use(staticServer('/Users/pingyiluo/Desktop/courseimg'));
 
