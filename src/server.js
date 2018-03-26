@@ -14,7 +14,9 @@ function start() {
     app.use(router.routes());
     app.use(router.allowedMethods());
     app.use(staticServer(path.join(__dirname, '../static')));
-    app.use(staticServer('/Users/pingyiluo/Desktop/courseimg'));
+    app.use(staticServer('/Users/pingyiluo/Desktop/job/TV/app/image/courseimg'));
+    app.use(staticServer('/Users/pingyiluo/Desktop/job/TV/app'));
+    app.use(staticServer('/Users/pingyiluo/Desktop/react-app/build'));
 
     app.listen(8001, () => {
         console.log('课件辅助工具生成data');
