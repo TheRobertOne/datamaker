@@ -50,7 +50,23 @@ router.post('/generate', async (ctx, next) => {
 });
 
 
-
+router.get('/check-read', async (ctx, next) => {
+    let str = fs.readFileSync(path.join(__dirname, '../static/outdata.json'), 'utf-8');
+    let obj = JSON.parse(str);
+    let len = obj['courseware'].length;
+    let arr = [];
+    for (let i = 0; i < len; i++) {
+        if (obj['courseware'][i]['type'] === 'read') {
+            let temp = {
+                id: obj['courseware'][i]['id'],
+                content: obj['courseware'][i]['content'],
+                text: obj['courseware'][i]['data']['text'],
+            };
+            arr.push(temp);
+        }
+    }
+    ctx.body = arr;
+});
 
 router.get('/images', async (ctx, next) => {
     let dir = '/Users/pingyiluo/Desktop/job/TV/app/image/courseimg';
