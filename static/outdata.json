@@ -1,1 +1,68 @@
-{"lesson_title":"","lesson_points":"","courseware":[{"type":"read","page":0,"content_type":0,"content":"Hello","id":1,"state":"02","overviewImage":"","data":{"image":"","pos":{"x":0,"y":169},"title":"","text_Image":"./image/courseimg/2.png","text":"Hello","text_pos":{"x":416.5,"y":79},"font_size":68,"fill_color":"#0099ff"}},{"type":"display","id":2,"state":"01","page":1,"content_type":"","data":{"background_image":"","overviewImage":"","pos":{"x":247,"y":79},"title":"","text_pos":{"x":460,"y":30},"body":[{"image":"","pos":{"x":209.5,"y":79}}],"font_size":68,"fill_color":"#0a152a"}},{"type":"survey","page":2,"content_type":"","content":"","id":3,"state":"07","data":{"overviewImage":"","pos":{"x":0,"y":169},"title":"","titleImage":"","text_pos":{"x":327.5,"y":79},"font_size":68,"fill_color":"#000000","body":[{"text":"","font_size":68,"fill_color":"#0099ff","image":"","name":"","nameNum":0,"pos":{"x":167,"y":209},"size":{"w":100,"h":100}}]}},{"type":"read","page":3,"content_type":0,"content":"how are you","id":4,"state":"02","overviewImage":"","data":{"image":"","pos":{"x":0,"y":169},"title":"","text_Image":"./image/courseimg/2.png","text":"how are you","text_pos":{"x":416.5,"y":79},"font_size":68,"fill_color":"#0099ff"}},{"type":"display","id":5,"state":"01","page":4,"content_type":"","data":{"background_image":"","overviewImage":"","pos":{"x":247,"y":79},"title":"","text_pos":{"x":460,"y":30},"body":[{"image":"","pos":{"x":209.5,"y":79}}],"font_size":68,"fill_color":"#0a152a"}},{"type":"read","page":5,"content_type":0,"content":"i am fine","id":6,"state":"02","overviewImage":"","data":{"image":"","pos":{"x":0,"y":169},"title":"","text_Image":"./image/courseimg/2.png","text":"i am fine","text_pos":{"x":416.5,"y":79},"font_size":68,"fill_color":"#0099ff"}},{"type":"survey","page":6,"content_type":"","content":"","id":7,"state":"07","data":{"overviewImage":"","pos":{"x":0,"y":169},"title":"","titleImage":"","text_pos":{"x":327.5,"y":79},"font_size":68,"fill_color":"#000000","body":[{"text":"","font_size":68,"fill_color":"#0099ff","image":"","name":"","nameNum":0,"pos":{"x":167,"y":209},"size":{"w":100,"h":100}}]}}]}
+{
+    "lesson_title": "",
+    "lesson_points": "",
+    "courseware": [
+        {
+            "type": "multiselect",
+            "page": 0,
+            "content_type": "",
+            "content": "",
+            "id": 1,
+            "state": "05",
+            "data": {
+                "title": "",
+                "text": "",
+                "image": "title.png",
+                "fontSize": 48,
+                "fillColor": "#000000",
+                "text_pos": {
+                    "x": 10,
+                    "y": 20
+                },
+                "background": "",
+                "q_image": "qq.png",
+                "pos": {
+                    "x": 30,
+                    "y": 40
+                },
+                "ok_btnPos": {
+                    "x": 450,
+                    "y": 675
+                },
+                "answer": [
+                    0
+                ],
+                "body": [
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "b1.png",
+                        "pos": {
+                            "x": 101,
+                            "y": 430
+                        },
+                        "size": {
+                            "w": 100,
+                            "h": 100
+                        }
+                    },
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "b2.png",
+                        "pos": {
+                            "x": 3,
+                            "y": 4
+                        },
+                        "size": {
+                            "w": 1,
+                            "h": 2
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
