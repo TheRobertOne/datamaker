@@ -9,20 +9,16 @@ let len = obj['courseware'].length;
 
 let positionArr = [
     {
-        x: 148,
-        y: 206
+        "x": 182,
+        "y": 222
     },
     {
-        x: 32,
-        y: 438
+        "x": 48,
+        "y": 454
     },
     {
-        x: 264,
-        y: 438
-    },
-    {
-        x: 2,
-        y: 2
+        "x": 316,
+        "y": 454
     },
     {
         x: 2,
