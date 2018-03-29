@@ -23,6 +23,23 @@ router.post('/generate', async (ctx, next) => {
             }
         });
     });
+    
+    await new Promise((resolve, reject) => {
+        fs.writeFile('/Users/pingyiluo/Desktop/job/TV/app/outdata.json', reqData, (err) => {
+
+            if (err) {
+                reject(err);
+
+            } else {
+                resolve(200);
+
+
+            }
+        });
+    });
+
+
+
     var readStr = fs.readFileSync(path.join(__dirname, '../static/sourcedata.js'), 'utf-8');
     readStr = readStr.replace(`'$hello$'`, reqData);
 
