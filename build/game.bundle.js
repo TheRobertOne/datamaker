@@ -91,7 +91,7 @@ eval("\n\nvar a = 'hello abc';\n\nexports.a = a;\n\n//# sourceURL=webpack:///./s
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _bird = __webpack_require__(/*! ./js/bird */ \"./static/game/js/bird.js\");\n\nconsole.log(_bird.a);\n\n//# sourceURL=webpack:///./static/game/main.js?");
+eval("\n\nvar _bird = __webpack_require__(/*! ./js/bird */ \"./static/game/js/bird.js\");\n\nconsole.log(_bird.a);\nconsole.log(Phaser);\n\n//# sourceURL=webpack:///./static/game/main.js?");
 
 /***/ })
 
