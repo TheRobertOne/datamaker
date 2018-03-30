@@ -5,6 +5,7 @@ const staticServer = require('koa-static');
 const bodyParser = require('koa-bodyparser');
 const opn = require('opn');
 const app = new Koa();
+const config = require('./config');
 
 
 const router = require('./router');
@@ -13,9 +14,18 @@ function start() {
     app.use(bodyParser());
     app.use(router.routes());
     app.use(router.allowedMethods());
-    app.use(staticServer(path.join(__dirname, '../static')));
-    app.use(staticServer('/Users/pingyiluo/Desktop/job/TV/app/image/courseimg'));
-    app.use(staticServer('/Users/pingyiluo/Desktop/react-app/build'));
+
+    if (config.isDevLesson) {
+        //开发课件时用
+        app.use(staticServer(path.join(__dirname, '../static')));
+        app.use(staticServer('/Users/pingyiluo/Desktop/job/TV/app/image/courseimg'));
+        app.use(staticServer('/Users/pingyiluo/Desktop/react-app/build'));
+    } else {
+        //开发游戏时用
+        app.use(staticServer(path.join(__dirname, '../build')));
+        app.use(staticServer(path.join(__dirname, '../lib')));
+    }
+
 
     app.listen(8001, () => {
         console.log('课件辅助工具生成data');

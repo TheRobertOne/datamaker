@@ -6,7 +6,10 @@ console.log('webpack 打包。。phaser练习');
 const config =
     {
         mode: 'development',
-        entry: './static/h5game.js',
+        entry: './static/game/main.js',
+        externals: {
+            Phaser: 'Phaser'
+        },
         module: {
             rules: [
                 { test: /\.css$/, use: 'css-loader' },
@@ -33,14 +36,13 @@ const config =
             ]
         },
         output: {
-            path: path.resolve(__dirname, './static'),
-            filename: 'h5game.bundle.js'
+            path: path.resolve(__dirname, './build'),
+            filename: 'game.bundle.js'
         },
         plugins: [
             // new webpack.optimize.UglifyJsPlugin(),
             new HtmlWebpackPlugin({
-                template: './h5.html',
-                filename: './h5g.html'
+                template: './static/game/index.html'
             }),
 
         ],
