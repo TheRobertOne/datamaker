@@ -12,7 +12,23 @@ const config =
         },
         module: {
             rules: [
-                { test: /\.css$/, use: 'css-loader' },
+                {
+                    test: /\.css$/,
+                    use: [
+                        {
+                            loader: 'style-loader'
+                        },
+                        {
+                            loader: 'css-loader'
+                        },
+                        {
+                            loader: 'postcss-loader'
+                        },
+                        {
+                            loader: "sass-loader" // compiles Sass to CSS
+                        }
+                    ]
+                },
                 { test: /\.ts$/, use: 'ts-loader' },
                 {
                     test: /\.(png|jpg|gif)$/,
