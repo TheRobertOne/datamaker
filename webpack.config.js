@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //通过 npm 安装
 const webpack = require('webpack'); //访问内置的插件
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 console.log('webpack 打包。。phaser练习');
 
 const config =
@@ -13,7 +14,7 @@ const config =
         module: {
             rules: [
                 {
-                    test: /\.css$/,
+                    test: /\.scss$/,
                     use: [
                         {
                             loader: 'style-loader'
@@ -22,7 +23,21 @@ const config =
                             loader: 'css-loader'
                         },
                         {
-                            loader: 'postcss-loader'
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => [
+                                    require('postcss-flexbugs-fixes'),
+                                    autoprefixer({
+                                        browsers: [
+                                            '>1%',
+                                            'last 4 versions',
+                                            'Firefox ESR',
+                                            'not ie < 9', // React doesn't support IE8 anyway
+                                        ],
+                                        flexbox: 'no-2009',
+                                    }),
+                                ]
+                            }
                         },
                         {
                             loader: "sass-loader" // compiles Sass to CSS
