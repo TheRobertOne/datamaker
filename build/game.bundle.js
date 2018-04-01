@@ -71,18 +71,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./static/game/js/bird.js":
-/*!********************************!*\
-  !*** ./static/game/js/bird.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar a = 'hello abc';\n\nexports.a = a;\n\n//# sourceURL=webpack:///./static/game/js/bird.js?");
-
-/***/ }),
-
 /***/ "./static/game/main.js":
 /*!*****************************!*\
   !*** ./static/game/main.js ***!
@@ -91,7 +79,19 @@ eval("\n\nvar a = 'hello abc';\n\nexports.a = a;\n\n//# sourceURL=webpack:///./s
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _bird = __webpack_require__(/*! ./js/bird */ \"./static/game/js/bird.js\");\n\nconsole.log(_bird.a);\nconsole.log(Phaser);\n\n//# sourceURL=webpack:///./static/game/main.js?");
+eval("\n\nvar Boot = __webpack_require__(/*! ./state/boot */ \"./static/game/state/boot.js\");\nvar game = new Phaser.Game(800, 600, Phaser.CANVAS, 'direct', undefined, true, true);\n\ngame.state.add('boot', new Boot());\n\ngame.state.start('boot');\n\n//# sourceURL=webpack:///./static/game/main.js?");
+
+/***/ }),
+
+/***/ "./static/game/state/boot.js":
+/*!***********************************!*\
+  !*** ./static/game/state/boot.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Boot = function () {\n    function Boot() {\n        _classCallCheck(this, Boot);\n    }\n\n    _createClass(Boot, [{\n        key: 'preload',\n        value: function preload() {}\n    }, {\n        key: 'create',\n        value: function create(game) {\n            // console.log(game);\n            var text = game.add.text(game.world.centerX, game.world.centerY, 'Hello wo', { fill: '#f00' });\n            text.anchor.setTo(0.5, 0.5);\n        }\n    }]);\n\n    return Boot;\n}();\n\nmodule.exports = Boot;\n\n//# sourceURL=webpack:///./static/game/state/boot.js?");
 
 /***/ })
 
