@@ -126,6 +126,17 @@ eval("module.exports = __webpack_require__.p + \"f66f4245c2260530f28f61efe5e1ff1
 
 /***/ }),
 
+/***/ "./static/game/assets/pics/undersea.jpg":
+/*!**********************************************!*\
+  !*** ./static/game/assets/pics/undersea.jpg ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"4b3ca3fb991bfe138ea08dc57a9af00f.jpg\";\n\n//# sourceURL=webpack:///./static/game/assets/pics/undersea.jpg?");
+
+/***/ }),
+
 /***/ "./static/game/assets/sprites/metalslug_mummy37x45.png":
 /*!*************************************************************!*\
   !*** ./static/game/assets/sprites/metalslug_mummy37x45.png ***!
@@ -134,6 +145,28 @@ eval("module.exports = __webpack_require__.p + \"f66f4245c2260530f28f61efe5e1ff1
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"2184cb7cc290db0a4ca226a92eb2d541.png\";\n\n//# sourceURL=webpack:///./static/game/assets/sprites/metalslug_mummy37x45.png?");
+
+/***/ }),
+
+/***/ "./static/game/assets/sprites/seacreatures_json.json.png":
+/*!***************************************************************!*\
+  !*** ./static/game/assets/sprites/seacreatures_json.json.png ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"8f435fa0f41836f1e3cdfbbaf66d20ae.png\";\n\n//# sourceURL=webpack:///./static/game/assets/sprites/seacreatures_json.json.png?");
+
+/***/ }),
+
+/***/ "./static/game/assets/sprites/seacreatures_json.png":
+/*!**********************************************************!*\
+  !*** ./static/game/assets/sprites/seacreatures_json.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"a3b9ee52d58869649c776203c31ab278.png\";\n\n//# sourceURL=webpack:///./static/game/assets/sprites/seacreatures_json.png?");
 
 /***/ }),
 
@@ -168,7 +201,7 @@ eval("\n\n__webpack_require__(/*! ./index.scss */ \"./static/game/index.scss\");
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _d = __webpack_require__(/*! ./d2 */ \"./static/game/state/d2.js\");\n\nvar _d2 = _interopRequireDefault(_d);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Boot = function () {\n    function Boot() {\n        _classCallCheck(this, Boot);\n    }\n\n    _createClass(Boot, [{\n        key: 'preload',\n        value: function preload(game) {\n            game.load.image('lazur', __webpack_require__(/*! ../assets/pics/thorn_lazur.png */ \"./static/game/assets/pics/thorn_lazur.png\"));\n            game.load.spritesheet('mummy', __webpack_require__(/*! ../assets/sprites/metalslug_mummy37x45.png */ \"./static/game/assets/sprites/metalslug_mummy37x45.png\"), 37, 45, 18);\n        }\n    }, {\n        key: 'create',\n        value: function create(game) {\n            game.stage.disableVisibilityChange = true;\n            // console.log(game);\n            this.back = game.add.image(0, 0, 'lazur');\n            this.back.scale.setTo(1);\n            this.back.smoothed = true;\n            this.mummy = game.add.sprite(game.world.centerX, game.world.centerY, 'mummy', 5);\n            this.mummy.scale.setTo(4);\n            this.mummy.anchor.setTo(0.5, 0.5);\n            this.anim = this.mummy.animations.add('walk', null, 10, true);\n            this.title = game.add.text(game.world.centerX, game.world.centerY, 'hello world', { fill: 'blue' });\n\n            this.anim.onStart.add(function (sprite, animations) {\n                console.log('start ');\n            }, this);\n            this.anim.play('walk');\n\n            this.anim.onLoop.add(function (sprite, animations) {\n                console.log('loop');\n                this.title.text = 'loop' + animations.loopCount;\n                if (animations.loopCount >= 4) {\n                    animations.stop();\n                    game.state.add('d2', new _d2.default());\n                    game.state.start('d2');\n                }\n            }, this);\n            this.anim.onComplete.add(function (sprite, animations) {\n                console.log('complete');\n            }, this);\n        }\n    }, {\n        key: 'update',\n        value: function update() {\n            if (this.anim.isPlaying) {\n                this.back.x -= 1;\n            }\n        }\n    }]);\n\n    return Boot;\n}();\n\nmodule.exports = Boot;\n\n//# sourceURL=webpack:///./static/game/state/boot.js?");
+eval("\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _d = __webpack_require__(/*! ./d2 */ \"./static/game/state/d2.js\");\n\nvar _d2 = _interopRequireDefault(_d);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Boot = function () {\n    function Boot() {\n        _classCallCheck(this, Boot);\n    }\n\n    _createClass(Boot, [{\n        key: 'preload',\n        value: function preload(game) {\n            game.load.image('lazur', __webpack_require__(/*! ../assets/pics/thorn_lazur.png */ \"./static/game/assets/pics/thorn_lazur.png\"));\n            game.load.spritesheet('mummy', __webpack_require__(/*! ../assets/sprites/metalslug_mummy37x45.png */ \"./static/game/assets/sprites/metalslug_mummy37x45.png\"), 37, 45, 18);\n        }\n    }, {\n        key: 'create',\n        value: function create(game) {\n            game.stage.disableVisibilityChange = true;\n            // console.log(game);\n            this.back = game.add.image(0, 0, 'lazur');\n            this.back.scale.setTo(1);\n            this.back.smoothed = true;\n            this.mummy = game.add.sprite(game.world.centerX, game.world.centerY, 'mummy', 5);\n            this.mummy.scale.setTo(4);\n            this.mummy.anchor.setTo(0.5, 0.5);\n            this.anim = this.mummy.animations.add('walk', null, 60, true);\n            this.title = game.add.text(game.world.centerX, game.world.centerY, 'hello world', { fill: 'blue' });\n\n            this.anim.onStart.add(function (sprite, animations) {\n                console.log('start ');\n            }, this);\n            this.anim.play('walk');\n\n            this.anim.onLoop.add(function (sprite, animations) {\n                console.log('loop');\n                this.title.text = 'loop' + animations.loopCount;\n                if (animations.loopCount >= 1) {\n                    animations.stop();\n                    game.state.add('d2', new _d2.default(game));\n                    game.state.start('d2');\n                }\n            }, this);\n            this.anim.onComplete.add(function (sprite, animations) {\n                console.log('complete');\n            }, this);\n        }\n    }, {\n        key: 'update',\n        value: function update() {\n            if (this.anim.isPlaying) {\n                this.back.x -= 1;\n            }\n        }\n    }]);\n\n    return Boot;\n}();\n\nmodule.exports = Boot;\n\n//# sourceURL=webpack:///./static/game/state/boot.js?");
 
 /***/ }),
 
@@ -180,7 +213,7 @@ eval("\n\nvar _createClass = function () { function defineProperties(target, pro
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar D2 = function () {\n    function D2() {\n        _classCallCheck(this, D2);\n    }\n\n    _createClass(D2, [{\n        key: \"preload\",\n        value: function preload() {}\n    }, {\n        key: \"create\",\n        value: function create() {}\n    }]);\n\n    return D2;\n}();\n\nmodule.exports = D2;\n\n//# sourceURL=webpack:///./static/game/state/d2.js?");
+eval("\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar D2 = function () {\n    function D2() {\n        _classCallCheck(this, D2);\n    }\n\n    _createClass(D2, [{\n        key: 'preload',\n        value: function preload(game) {\n\n            game.load.atlas('seacreatures', __webpack_require__(/*! ../assets/sprites/seacreatures_json.png */ \"./static/game/assets/sprites/seacreatures_json.png\"), __webpack_require__(/*! ../assets/sprites/seacreatures_json.json.png */ \"./static/game/assets/sprites/seacreatures_json.json.png\"));\n            game.load.image('undersea', __webpack_require__(/*! ../assets/pics/undersea.jpg */ \"./static/game/assets/pics/undersea.jpg\"));\n        }\n    }, {\n        key: 'create',\n        value: function create(game) {\n            this.myimage = game.add.image(0, 0, 'undersea');\n            this.myimage.inputEnabled = true;\n            console.log(this.myimage.events);\n            this.myimage.events.onInputDown.add(function (s, a) {\n                console.log(a);\n            }, this);\n            this.greenJellyfish = game.add.sprite(0, 0, 'seacreatures', 'greenJellyfish0000');\n        }\n    }]);\n\n    return D2;\n}();\n\nmodule.exports = D2;\n\n//# sourceURL=webpack:///./static/game/state/d2.js?");
 
 /***/ })
 

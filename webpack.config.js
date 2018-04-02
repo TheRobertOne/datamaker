@@ -44,6 +44,7 @@ const config =
                         }
                     ]
                 },
+                
                 { test: /\.ts$/, use: 'ts-loader' },
                 {
                     test: /\.(png|jpg|gif)$/,

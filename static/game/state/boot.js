@@ -19,7 +19,7 @@ class Boot {
         this.mummy = game.add.sprite(game.world.centerX, game.world.centerY, 'mummy', 5);
         this.mummy.scale.setTo(4);
         this.mummy.anchor.setTo(0.5, 0.5);
-        this.anim = this.mummy.animations.add('walk', null, 10, true);
+        this.anim = this.mummy.animations.add('walk', null, 60, true);
         this.title = game.add.text(game.world.centerX, game.world.centerY, 'hello world', { fill: 'blue' })
 
         this.anim.onStart.add(function (sprite, animations) {
@@ -30,9 +30,9 @@ class Boot {
         this.anim.onLoop.add(function (sprite, animations) {
             console.log('loop')
             this.title.text = 'loop' + animations.loopCount;
-            if (animations.loopCount >= 4) {
+            if (animations.loopCount >= 1) {
                 animations.stop();
-                game.state.add('d2', new D2());
+                game.state.add('d2', new D2(game));
                 game.state.start('d2');
             }
         }, this);
