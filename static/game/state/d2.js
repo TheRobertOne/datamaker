@@ -16,7 +16,8 @@ class D2 {
         this.myimage.events.onInputDown.add(function (s, a) {
             console.log(a)
         }, this)
-        this.greenJellyfish = game.add.sprite(0, 0, 'seacreatures', 'greenJellyfish0000');
+        this.greenJellyfish = game.add.sprite(0, 0, 'seacreatures', 'crab10014');
+        console.log(this.greenJellyfish.frameName)
     }
 
 }
