@@ -1,9 +1,10 @@
 require('./index.scss');
-
+const D3 = require('./state/d5');
 // const Boot = require('./state/boot');
-const D4 = require('./state/d4');
-const game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'direct', this, true, true);
 
-game.state.add('d4', new D4());
+const game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'direct', this, false, true);
 
-game.state.start('d4');
+game.state.add('d3', new D3());
+
+game.state.start('d3');
+

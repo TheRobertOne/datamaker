@@ -5,7 +5,7 @@ class D3 {
     }
     preload(game) {
         game.load.spritesheet('mummy', require('../assets/sprites/metalslug_mummy37x45.png'), 37, 45, 18);
-        game.load.atlasJSONHash('bot', require('../assets/sprites/running_bot.png'), require('../assets/sprites/running_bot_json.png'));
+        game.load.atlasJSONHash('bot', require('../assets/sprites/running_bot.png'), '/sprite-json/running_bot.json');
     }
     create(game) {
         game.stage.disableVisibilityChange = true;

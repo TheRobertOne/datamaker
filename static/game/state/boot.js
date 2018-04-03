@@ -1,5 +1,4 @@
 
-import D2 from './d2';
 
 class Boot {
     constructor() {
@@ -32,8 +31,7 @@ class Boot {
             this.title.text = 'loop' + animations.loopCount;
             if (animations.loopCount >= 1) {
                 animations.stop();
-                game.state.add('d2', new D2(game));
-                game.state.start('d2');
+               
             }
         }, this);
         this.anim.onComplete.add(function (sprite, animations) {

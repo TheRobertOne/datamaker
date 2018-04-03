@@ -5,7 +5,7 @@ class D2 {
     }
     preload(game) {
 
-        game.load.atlas('seacreatures', require('../assets/sprites/seacreatures_json.png'), require('../assets/sprites/seacreatures_json.json.png'));
+        game.load.atlas('seacreatures', require('../assets/sprites/seacreatures_json.png'), '/sprite-json/seacreatures_json.json');
         game.load.image('undersea', require('../assets/pics/undersea.jpg'));
 
     }
