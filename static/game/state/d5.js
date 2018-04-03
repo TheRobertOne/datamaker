@@ -10,7 +10,7 @@ class D5 {
 
         game.input.onDown.add(function (p, y) {
             let mt = game.add.tween(this.sprite)
-            mt.to({ x: p.x, y: p.y }, 100, 'Linear', true, 0, 0, false)
+            mt.to({ x: p.x, y: p.y }, 200, 'Linear', true, 0, 0, false)
 
         }, this);
 
