@@ -1,7 +1,7 @@
 
 class D6 {
     init() {
-      
+
     }
     preload(game) {
         game.scale.pageAlignHorizontally = true; //水平居中
@@ -13,6 +13,7 @@ class D6 {
 
     }
     create(game) {
+        game.physics.startSystem(Phaser.Physics.ARCADE)
         game.stage.disableVisibilityChange = true;
 
         this.sky = game.add.image(0, 0, 'sky');
@@ -65,6 +66,9 @@ class D6 {
         }
 
 
+    }
+    render(game) {
+        game.debug.spriteInfo(this.sky, 32, 32)
     }
 }
 
