@@ -18,7 +18,7 @@ class D9 {
         this.dudu.body.velocity.y = 500;
         this.dudu.body.velocity.x = 300;
         this.dudu.body.collideWorldBounds = true;
-        this.dudu.body.bounce.setTo(0.8, 0.5);
+        this.dudu.body.bounce.setTo(0.1, 0.5);
     }
     update(game) {
 
