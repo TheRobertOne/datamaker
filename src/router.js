@@ -23,9 +23,9 @@ router.post('/generate', async (ctx, next) => {
             }
         });
     });
-    
+
     await new Promise((resolve, reject) => {
-        fs.writeFile('/Users/pingyiluo/Desktop/job/TV/app/outdata.json', reqData, (err) => {
+        fs.writeFile(path.join(__dirname, '../app/outdata.json'), reqData, (err) => {
 
             if (err) {
                 reject(err);
@@ -45,7 +45,7 @@ router.post('/generate', async (ctx, next) => {
 
     let myresult = await new Promise((resolve, reject) => {
 
-        fs.writeFile('/Users/pingyiluo/Desktop/job/TV/app/js/data.js', readStr, (err) => {
+        fs.writeFile(path.join(__dirname, '../app/js/data.js'), readStr, (err) => {
             if (err) {
                 reject(err);
             } else {
@@ -86,7 +86,7 @@ router.get('/check-read', async (ctx, next) => {
 });
 
 router.get('/images', async (ctx, next) => {
-    let dir = '/Users/pingyiluo/Desktop/job/TV/app/image/courseimg';
+    let dir = path.join(__dirname, '../app/image/courseimg');
     // var result = walk(path.join(__dirname, '../courseimg'));
     var result = walk(dir);
 

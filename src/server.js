@@ -18,8 +18,9 @@ function start() {
     if (config.isDevLesson) {
         //开发课件时用
         app.use(staticServer(path.join(__dirname, '../static')));
-        app.use(staticServer('/Users/pingyiluo/Desktop/job/TV/app/image/courseimg'));
-        app.use(staticServer('/Users/pingyiluo/Desktop/react-app/build'));
+        app.use(staticServer(path.join(__dirname, '../app/image/courseimg')));
+        app.use(staticServer(path.join(__dirname, '../myreact')));
+        app.use(staticServer(path.join(__dirname, '../app')));
     } else {
         //开发游戏时用
         app.use(staticServer(path.join(__dirname, '../build')));
