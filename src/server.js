@@ -19,7 +19,11 @@ function start() {
         //开发课件时用
         app.use(staticServer(path.join(__dirname, '../static')));
         app.use(staticServer(path.join(__dirname, '../app/image/courseimg')));
-        app.use(staticServer(path.join(__dirname, '../myreact')));
+        if (config.isOldReact) {
+            app.use(staticServer(path.join(__dirname, '../oldmyreact')));
+        } else {
+            app.use(staticServer(path.join(__dirname, '../myreact')));
+        }
         app.use(staticServer(path.join(__dirname, '../app')));
     } else {
         //开发游戏时用

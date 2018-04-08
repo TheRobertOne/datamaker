@@ -204,7 +204,16 @@ var dataType = {
                 "y": 90
             },
             "font_size": 68,
-            "fill_color": "#0099ff"
+            "fill_color": "#0099ff",
+            "other_images": [
+                {
+                    "image": "",
+                    "pos": {
+                        "x": 0,
+                        "y": 0
+                    }
+                }
+            ]
         }
     },
     //普通互动题  问卷 
@@ -277,6 +286,15 @@ var dataType = {
                     "size": {
                         "w": 100,
                         "h": 100
+                    }
+                }
+            ],
+            "other_images": [
+                {
+                    "image": "",
+                    "pos": {
+                        "x": 0,
+                        "y": 0
                     }
                 }
             ]
@@ -353,7 +371,16 @@ var dataType = {
 
             ],
 
-            "answer": 0
+            "answer": 0,
+            "other_images": [
+                {
+                    "image": "",
+                    "pos": {
+                        "x": 0,
+                        "y": 0
+                    }
+                }
+            ]
         }
     }
 };
