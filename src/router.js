@@ -91,11 +91,12 @@ router.get('/images', async (ctx, next) => {
     var result = walk(dir);
 
     result = result.filter((item) => {
-        return (item || '').indexOf('.DS_Store') < 0;
+        return (item || '').indexOf('.png') >= 0;
 
     });
 
     result = result.map((item) => {
+        console.log(item)
         var dimensions = sizeOf(item);
         let temArr = item.split('/courseimg');
         let str = temArr[1];
