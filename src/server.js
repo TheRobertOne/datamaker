@@ -29,6 +29,8 @@ function start() {
         //开发游戏时用
         app.use(staticServer(path.join(__dirname, '../build')));
         app.use(staticServer(path.join(__dirname, '../lib')));
+
+        // app.use(staticServer(path.join(__dirname, '../newH5')));
     }
 
 

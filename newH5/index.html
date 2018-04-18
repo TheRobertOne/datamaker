@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>直播课堂</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: ArialRoundedMTBold
+        }
+
+        @font-face {
+            font-family: ArialRoundedMTBold;
+            src: url(image/font/DINNextRoundedLTPro-Regular.otf)
+        }
+
+        @keyframes rotate_left {
+            from {
+                transform: rotate(16deg)
+            }
+            to {
+                transform: rotate(376deg)
+            }
+        }
+
+        @keyframes rotate_right {
+            from {
+                transform: rotate(376deg)
+            }
+            to {
+                transform: rotate(16deg)
+            }
+        }
+
+        #abc_time_loading {
+            position: fixed;
+            width: 4rem;
+            height: 4rem;
+            top: 50%;
+            left: 50%;
+            margin-top: -2rem;
+            margin-left: -2rem
+        }
+
+        .abc_time_loading_l1,
+        .abc_time_loading_l2,
+        .abc_time_loading_l3,
+        .abc_time_loading_l4 {
+            position: absolute
+        }
+
+        .abc_time_loading_l1 {
+            width: 100%
+        }
+
+        .abc_time_loading_l2 {
+            width: 1.5rem;
+            left: .6rem;
+            top: .3rem;
+            animation: rotate_left 5s infinite linear
+        }
+
+        .abc_time_loading_l3 {
+            width: .8rem;
+            left: 2.5rem;
+            top: .3rem;
+            animation: rotate_left 3s infinite linear
+        }
+
+        .abc_time_loading_l4 {
+            width: 1.2rem;
+            left: 2.5rem;
+            top: 1.5rem;
+            animation: rotate_right 5s infinite linear
+        }
+
+        #abc_time_loading_progress {
+            width: 100%;
+            position: absolute;
+            color: #fff;
+            font-size: .5rem;
+            text-align: center;
+            bottom: 0
+        }
+    </style>
+    <script>!function (n) { function e() { document.getElementsByTagName("html")[0].style.fontSize = window.innerWidth / n.w * 100 + "px" } e(), window.addEventListener("pageshow", function () { e() }), window.addEventListener("resize", function () { e() }) }({ w: 1280, h: 720 })</script>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="abc_time_box">
+        <div id="abc_star">star</div>
+        <div id="abc_group">group</div>
+    </div>
+    <div id="abc_time_mask">abc_time_mask</div>
+    <div id="abc_time_loading">
+        <img src="./image/loading_img01.png" alt="" class="abc_time_loading_l1">
+        <img src="./image/loading_img02.png" alt="" class="abc_time_loading_l2">
+        <img src="./image/loading_img03.png" alt="" class="abc_time_loading_l3">
+        <img src="./image/loading_img04.png" alt="" class="abc_time_loading_l4">
+        <div id="abc_time_loading_progress">0</div>
+    </div>
+    <script src="./data.js"></script>
+    <script src="./lib/dsbridge.js"></script>
+    <script src="./lib/phaser.js"></script>
+    <script type="text/javascript" src="/static/js/main.9e39f3e7.js"></script>
+</body>
+
+</html>
