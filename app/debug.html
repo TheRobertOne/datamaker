@@ -9,7 +9,7 @@
     <link rel='icon' href='./image/ibl.ico' type=‘image/x-ico’ />
     <title>直播课堂</title>
     <script src="js/data.js?9999"></script>
-    <!--<script src="/files/common/js/phaser2.6.1.min.js" />-->
+    <!-- <script src="/files/common/js/phaser2.6.1.min.js" /> -->
     <!--<script src="//live-file.b0.upaiyun.com/files/common/js/phaser2.6.1.min.js" />-->
     <!-- <script src="//tv.firstleap.cn/common/js/phaser2.6.1.min.js" /> -->
     <script src="./phaser-v2.4.6.js"></script>
@@ -169,41 +169,43 @@
 
     <script src="app.js"></script>
     <script>
-        window.g = gameManager.slider.gotoSlideStep;
-        var mycurrentpage = 0;
-        var luopage = document.getElementById('page-box');
-        var pageLeft = document.getElementById('page-left');
-        var pageRight = document.getElementById('page-right');
-        var pageAmount = document.getElementById('page-amount');
-        var pageCurrent = document.getElementById('page-current');
-        var gotobtn = document.getElementById('gotobtn');
-        var gotoinp = document.getElementById('gotoinp');
-        window.addEventListener('load', function () {
-            pageAmount.innerHTML = json_data.courseware.length;
-        });
-        pageCurrent.innerHTML = mycurrentpage + 1;
 
-        pageLeft.onclick = function (e) {
-            mycurrentpage--;
-            mycurrentpage = mycurrentpage >= 0 ? mycurrentpage : 0;
-            g(mycurrentpage);
+            window.g = gameManager.slider.gotoSlideStep;
+            var mycurrentpage = 0;
+            var luopage = document.getElementById('page-box');
+            var pageLeft = document.getElementById('page-left');
+            var pageRight = document.getElementById('page-right');
+            var pageAmount = document.getElementById('page-amount');
+            var pageCurrent = document.getElementById('page-current');
+            var gotobtn = document.getElementById('gotobtn');
+            var gotoinp = document.getElementById('gotoinp');
+            window.addEventListener('load', function () {
+                pageAmount.innerHTML = json_data.courseware.length;
+            });
             pageCurrent.innerHTML = mycurrentpage + 1;
-        }
 
-        pageRight.onclick = function (e) {
-            mycurrentpage++;
-            mycurrentpage = mycurrentpage < json_data.courseware.length ? mycurrentpage : json_data.courseware.length - 1;
-            g(mycurrentpage);
-            pageCurrent.innerHTML = mycurrentpage + 1;
-        }
-        gotobtn.onclick = function () {
-            var val = parseInt((gotoinp.value || '').trim())
-            val = isNaN(val) ? 0 : val;
-            val -= 1;
-            mycurrentpage = val;
-            pageCurrent.innerHTML = mycurrentpage + 1;
-            g(val);
-        }
+            pageLeft.onclick = function (e) {
+                mycurrentpage--;
+                mycurrentpage = mycurrentpage >= 0 ? mycurrentpage : 0;
+                g(mycurrentpage);
+                pageCurrent.innerHTML = mycurrentpage + 1;
+            }
+
+            pageRight.onclick = function (e) {
+                mycurrentpage++;
+                mycurrentpage = mycurrentpage < json_data.courseware.length ? mycurrentpage : json_data.courseware.length - 1;
+                g(mycurrentpage);
+                pageCurrent.innerHTML = mycurrentpage + 1;
+            }
+            gotobtn.onclick = function () {
+                var val = parseInt((gotoinp.value || '').trim())
+                val = isNaN(val) ? 0 : val;
+                val -= 1;
+                mycurrentpage = val;
+                pageCurrent.innerHTML = mycurrentpage + 1;
+                g(val);
+            }
+
     </script>
 </body>
 
