@@ -22,7 +22,13 @@ function start() {
         if (config.isOldReact) {
             app.use(staticServer(path.join(__dirname, '../oldmyreact')));
         } else {
-            app.use(staticServer(path.join(__dirname, '../myreact')));
+            if (config.isFinal) {
+
+                app.use(staticServer(path.join(__dirname, '../finalreact')));
+
+            } else {
+                app.use(staticServer(path.join(__dirname, '../myreact')));
+            }
         }
         app.use(staticServer(path.join(__dirname, '../app')));
     } else {

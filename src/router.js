@@ -9,6 +9,7 @@ const router = new Router();
 
 router.post('/generate', async (ctx, next) => {
     // console.log(ctx.request.body)
+    toJs(ctx.request.body);
     let reqData = JSON.stringify(ctx.request.body);
     let result = await new Promise((resolve, reject) => {
         fs.writeFile(path.join(__dirname, '../static/outdata.json'), reqData, (err) => {
@@ -65,6 +66,23 @@ router.post('/generate', async (ctx, next) => {
         ctx.throw(500);
     }
 });
+
+async function toJs(reqData) {
+
+    var readStr = fs.readFileSync(path.join(__dirname, '../static/finnalsourcedata.js'), 'utf-8');
+    readStr = readStr.replace(`'$hello$'`,  JSON.stringify(reqData));
+
+    let myresult = await new Promise((resolve, reject) => {
+
+        fs.writeFile(path.join(__dirname, '../static/data.js'), readStr, (err) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(200);
+            }
+        });
+    })
+}
 
 
 router.get('/check-read', async (ctx, next) => {

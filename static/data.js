@@ -1,0 +1,1 @@
+var ABC_COURSE_DATA = {"page_size":{"w":1280,"h":720},"lesson_title":"","lesson_points":"","courseware":[{"type":"display","id":1,"data":{"title":[],"other_images":[],"body":[],"timeout":9}},{"type":"jigsaw","id":2,"data":{"title":[],"other_images":[],"body":[],"timeout":9,"groupA":[],"groupB":[]}}]};
