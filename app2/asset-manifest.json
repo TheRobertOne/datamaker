@@ -1,0 +1,13 @@
+{
+  "main.js": "static/js/main.js",
+  "main.js.map": "static/js/main.js.map",
+  "static/media/1.png": "static/media/1.0b2d1ab3.png",
+  "static/media/2.png": "static/media/2.12569b76.png",
+  "static/media/3.png": "static/media/3.f97ff3cf.png",
+  "static/media/choiceNoAnswer.png": "static/media/choiceNoAnswer.fdf7ffbc.png",
+  "static/media/choiceRight.png": "static/media/choiceRight.ee56c3bd.png",
+  "static/media/choiceWrong.png": "static/media/choiceWrong.ab2d42f3.png",
+  "static/media/microphone.png": "static/media/microphone.fda3611d.png",
+  "static/media/star.png": "static/media/star.27aaafe2.png",
+  "static/media/tracing-frog.png": "static/media/tracing-frog.5ee07f66.png"
+}

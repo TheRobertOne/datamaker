@@ -4,6 +4,7 @@ const walk = require('./readfile');
 const sizeOf = require('image-size');
 const fs = require('fs');
 const dataType = require('./data');
+const config = require('./config');
 
 const router = new Router();
 
@@ -70,7 +71,7 @@ router.post('/generate', async (ctx, next) => {
 async function toJs(reqData) {
 
     var readStr = fs.readFileSync(path.join(__dirname, '../static/finnalsourcedata.js'), 'utf-8');
-    readStr = readStr.replace(`'$hello$'`,  JSON.stringify(reqData));
+    readStr = readStr.replace(`'$hello$'`, JSON.stringify(reqData));
 
     let myresult = await new Promise((resolve, reject) => {
 
@@ -105,6 +106,9 @@ router.get('/check-read', async (ctx, next) => {
 
 router.get('/images', async (ctx, next) => {
     let dir = path.join(__dirname, '../app/image/courseimg');
+    if (config.isFinal) {
+        dir = path.join(__dirname, '../app2/image/courseimg');
+    }
     // var result = walk(path.join(__dirname, '../courseimg'));
     var result = walk(dir);
 

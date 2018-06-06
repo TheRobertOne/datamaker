@@ -17,7 +17,7 @@ function get_value() {
     return null;
 };
 if (what == null) {
-    json_data = {"page_size":{"w":1280,"h":720},"lesson_title":"","lesson_points":"","courseware":[{"type":"display","id":1,"data":{"title":[],"other_images":[],"body":[],"timeout":9}},{"type":"jigsaw","id":2,"data":{"title":[],"other_images":[],"body":[],"timeout":9,"groupA":[],"groupB":[]}}]};
+    json_data = {"page_size":{"w":1280,"h":720},"lesson_title":"","lesson_points":"","courseware":[{"type":"display","id":1,"data":{"title":[{"image":"./image/courseimg/13/13-2.png","pos":{"x":232,"y":79},"size":{"w":260,"h":224}}],"other_images":[],"body":[],"timeout":9}}]};
 } else {
     json_data = what;
 };

@@ -18,7 +18,12 @@ function start() {
     if (config.isDevLesson) {
         //开发课件时用
         app.use(staticServer(path.join(__dirname, '../static')));
-        app.use(staticServer(path.join(__dirname, '../app/image/courseimg')));
+
+        if (!config.isFinal) {
+            app.use(staticServer(path.join(__dirname, '../app/image/courseimg')));
+        } else {
+            app.use(staticServer(path.join(__dirname, '../app2/image/courseimg')));
+        }
         if (config.isOldReact) {
             app.use(staticServer(path.join(__dirname, '../oldmyreact')));
         } else {
@@ -30,7 +35,12 @@ function start() {
                 app.use(staticServer(path.join(__dirname, '../myreact')));
             }
         }
-        app.use(staticServer(path.join(__dirname, '../app')));
+        if (!config.isFinal) {
+            app.use(staticServer(path.join(__dirname, '../app')));
+
+        }else{
+            app.use(staticServer(path.join(__dirname, '../app2')));
+        }
     } else {
         //开发游戏时用
         // app.use(staticServer(path.join(__dirname, '../build')));
