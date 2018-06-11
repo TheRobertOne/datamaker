@@ -101,7 +101,15 @@ data['courseware'] = data['courseware'].map((item, i) => {
     return temp;
 });
 
-fs.writeFileSync(path.join(__dirname, './a.json'), JSON.stringify(data));
+
+var readStr = fs.readFileSync(path.join(__dirname, './sourcedata.js'), 'utf-8');
+readStr = readStr.replace(`'$hello$'`, JSON.stringify(data));
+
+fs.writeFile(path.join(__dirname, './data.js'), readStr, (err) => {
+   console.log('转换成功！！！');
+});
+
+
 
 
 

@@ -1,0 +1,1 @@
+var ABC_COURSE_DATA = '$hello$';

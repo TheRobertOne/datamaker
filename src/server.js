@@ -6,6 +6,7 @@ const bodyParser = require('koa-bodyparser');
 const opn = require('opn');
 const app = new Koa();
 const config = require('./config');
+const compressImage = require('./compressImage');
 
 
 const router = require('./router');
@@ -14,6 +15,9 @@ function start() {
     app.use(bodyParser());
     app.use(router.routes());
     app.use(router.allowedMethods());
+
+
+    compressImage();
 
     if (config.isDevLesson) {
         //开发课件时用
@@ -38,7 +42,7 @@ function start() {
         if (!config.isFinal) {
             app.use(staticServer(path.join(__dirname, '../app')));
 
-        }else{
+        } else {
             app.use(staticServer(path.join(__dirname, '../app2')));
         }
     } else {

@@ -95,8 +95,8 @@ router.get('/check-read', async (ctx, next) => {
         if (obj['courseware'][i]['type'] === 'read') {
             let temp = {
                 id: obj['courseware'][i]['id'],
-                content: obj['courseware'][i]['content'],
-                text: obj['courseware'][i]['data']['text'],
+                read_content: obj['courseware'][i]['read_content'],
+                read_type: obj['courseware'][i]['read_type']
             };
             arr.push(temp);
         }
