@@ -23,13 +23,13 @@ function getDirs(dir, arr) {
 
 
 
-function compressImage() {
+function compressImage(tostr) {
     let arr = getDirs(path.join(__dirname, 'image'), []);
 
 
     arr.map((item, index) => {
 
-        let temStr = item.replace('datamaker/src', 'datamaker/app2');
+        let temStr = item.replace('datamaker/src', 'datamaker/'+tostr);
         imagemin([item + '/*.png'], temStr, { use: [imageminPngquant()] }).then(() => {
             console.log('Images optimized');
 

@@ -17,7 +17,8 @@ function start() {
     app.use(router.allowedMethods());
 
 
-    compressImage();
+    compressImage('app2');
+    compressImage('app');
 
     if (config.isDevLesson) {
         //开发课件时用
