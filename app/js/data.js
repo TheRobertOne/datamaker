@@ -17,7 +17,7 @@ function get_value() {
     return null;
 };
 if (what == null) {
-    json_data = {"page_size":{"w":1280,"h":720},"lesson_title":"","lesson_points":"","courseware":[{"type":"display","id":1,"data":{"title":[],"other_images":[],"body":[],"timeout":9,"text":"天体无力"}}]};
+    json_data = {"page_size":{"w":1280,"h":720},"lesson_title":"","lesson_points":"","courseware":[{"type":"read","id":1,"data":{"text":"","title":[],"other_images":[],"body":[],"timeout":9,"css_images":[]},"read_type":"sentence","read_content":"Hello"}]};
 } else {
     json_data = what;
 };

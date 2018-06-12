@@ -1,0 +1,579 @@
+{
+    "lesson_title": "blue",
+    "lesson_points": "",
+    "courseware": [
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 1
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/2/2.png",
+                        "pos": {
+                            "x": 422.5,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 2,
+            "read_type": "sentence",
+            "read_content": "Hello"
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 3
+        },
+        {
+            "type": "choice",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/4/4.png",
+                        "pos": {
+                            "x": 279.5,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/4/4-1.png",
+                        "pos": {
+                            "x": 32,
+                            "y": 202
+                        },
+                        "size": {
+                            "w": 260,
+                            "h": 224
+                        }
+                    },
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/4/4-2.png",
+                        "pos": {
+                            "x": 32,
+                            "y": 451
+                        },
+                        "size": {
+                            "w": 260,
+                            "h": 224
+                        }
+                    }
+                ],
+                "timeout": 9,
+                "answer": 1
+            },
+            "id": 4
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 5
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/6/6.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 6,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/7/7.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 7,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/8/8.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 8,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 9
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 10
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 11
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/12/12.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 12,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "choice",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/13/13.png",
+                        "pos": {
+                            "x": 279.5,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/13/13-1.png",
+                        "pos": {
+                            "x": 32,
+                            "y": 202
+                        },
+                        "size": {
+                            "w": 271,
+                            "h": 224
+                        }
+                    },
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/13/13-2.png",
+                        "pos": {
+                            "x": 32,
+                            "y": 451
+                        },
+                        "size": {
+                            "w": 264,
+                            "h": 224
+                        }
+                    }
+                ],
+                "timeout": 9,
+                "answer": 1
+            },
+            "id": 13
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/14/14.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 14,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 15
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 16
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 17
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/18/18.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 18,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "multiselect",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/19/19.png",
+                        "pos": {
+                            "x": 279.5,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/19/19-1.png",
+                        "pos": {
+                            "x": 300,
+                            "y": 205
+                        },
+                        "size": {
+                            "w": 183,
+                            "h": 117
+                        }
+                    },
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/19/19-2.png",
+                        "pos": {
+                            "x": 513,
+                            "y": 205
+                        },
+                        "size": {
+                            "w": 183,
+                            "h": 117
+                        }
+                    },
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/19/19-3.png",
+                        "pos": {
+                            "x": 382,
+                            "y": 332
+                        },
+                        "size": {
+                            "w": 183,
+                            "h": 117
+                        }
+                    }
+                ],
+                "timeout": 9,
+                "answer": [
+                    0,
+                    1
+                ]
+            },
+            "id": 19
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/20/20.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 20,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 21
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 22
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 23
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 24
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/25/25.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 25,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "choice",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/26/26.png",
+                        "pos": {
+                            "x": 279.5,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/26/26-1.png",
+                        "pos": {
+                            "x": 32,
+                            "y": 202
+                        },
+                        "size": {
+                            "w": 260,
+                            "h": 224
+                        }
+                    },
+                    {
+                        "text": "",
+                        "voice": "",
+                        "allow": true,
+                        "image": "./image/courseimg/26/26-2.png",
+                        "pos": {
+                            "x": 32,
+                            "y": 451
+                        },
+                        "size": {
+                            "w": 260,
+                            "h": 224
+                        }
+                    }
+                ],
+                "timeout": 9,
+                "answer": 1
+            },
+            "id": 26
+        },
+        {
+            "type": "read",
+            "data": {
+                "title": [
+                    {
+                        "image": "./image/courseimg/27/27.png",
+                        "pos": {
+                            "x": 425,
+                            "y": 79
+                        }
+                    }
+                ],
+                "other_images": [],
+                "body": [],
+                "timeout": 9
+            },
+            "id": 27,
+            "read_type": "sentence",
+            "read_content": "blue"
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [
+                    {
+                        "image": "./image/courseimg/28/28.png",
+                        "pos": {
+                            "x": 397.5,
+                            "y": 79
+                        }
+                    }
+                ],
+                "timeout": 9
+            },
+            "id": 28
+        },
+        {
+            "type": "display",
+            "data": {
+                "title": [],
+                "other_images": [],
+                "body": [
+                   
+                ],
+                "timeout": 9
+            },
+            "id": 29
+        }
+    ],
+    "page_size": {
+        "w": 1024,
+        "h": 768
+    }
+}
