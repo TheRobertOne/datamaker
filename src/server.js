@@ -26,7 +26,8 @@ function start() {
         if (!config.isFinal) {
             app.use(staticServer(path.join(__dirname, '../app/image/courseimg')));
         } else {
-            app.use(staticServer(path.join(__dirname, '../app2/image/courseimg')));
+
+            app.use(staticServer(path.join(config.kejianPath, 'image/courseimg')));
         }
         if (config.isOldReact) {
             app.use(staticServer(path.join(__dirname, '../oldmyreact')));
