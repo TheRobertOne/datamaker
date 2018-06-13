@@ -239,9 +239,6 @@ function addArrs(data) {
 
         if (item['type'] === 'jigsaw' || item['type'] === 'cation') {
 
-            if (temp['type'] === 'jigsaw') {
-                temData['timeout'] = 9;
-            }
             if (!item['data']['groupA']) {
                 item['data']['groupA'] = [];
             }
