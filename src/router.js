@@ -103,14 +103,14 @@ async function toJs(reqData, isApp2) {
 
 router.get('/getInitData', async (ctx, next) => {
     let readStr = fs.readFileSync(tojspath, 'utf-8');
-    let reg = /var\s*ABC_COURSE_DATA\s*=/;
-    readStr = readStr.replace(reg, '');
-    readStr = readStr.trim();
-    let removeSemicolon = /}\s*;*$/;
-    readStr = readStr.replace(removeSemicolon, '}');
+    // let reg = /var\s*ABC_COURSE_DATA\s*=/;
+    // readStr = readStr.replace(reg, '');
+    // readStr = readStr.trim();
+    // let removeSemicolon = /}\s*;*$/;
+    // readStr = readStr.replace(removeSemicolon, '}');
 
-
-    readStr = getSize(addArrs(JSON.parse(readStr)), getImages(imagePath));
+    eval(readStr);
+    readStr = getSize(addArrs(ABC_COURSE_DATA), getImages(imagePath));
 
     ctx.response.type = 'json';
     ctx.body = readStr;
