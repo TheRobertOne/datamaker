@@ -4,6 +4,6 @@ module.exports = {
     isDevLesson: true,//开发课件？
     isOldReact: false,
     isFinal: true,
-    kejianPath: `/Users/pingyiluo/Desktop/Courseware/appdata/s4/4.05 First leap fashion`,
-    is169: false
+    kejianPath: `/Users/pingyiluo/Desktop/Courseware/appdata/21days/day14`,
+    is169: true
 };

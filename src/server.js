@@ -21,12 +21,13 @@ function start() {
 
     if (config.isDevLesson) {
         //开发课件时用
-        app.use(staticServer(path.join(__dirname, '../static')));
+
 
         if (!config.isFinal) {
             app.use(staticServer(path.join(__dirname, '../app/image/courseimg')));
         } else {
 
+            app.use(staticServer(config.kejianPath));
             app.use(staticServer(path.join(config.kejianPath, 'image/courseimg')));
         }
         if (config.isOldReact) {

@@ -11,6 +11,7 @@ const router = new Router();
 router.post('/generate', async (ctx, next) => {
     // console.log(ctx.request.body)
     toJs(ctx.request.body);
+    toJs(ctx.request.body, true);
     let reqData = JSON.stringify(ctx.request.body);
     let result = await new Promise((resolve, reject) => {
         fs.writeFile(path.join(__dirname, '../static/outdata.json'), reqData, (err) => {
@@ -78,14 +79,17 @@ console.log(tojspath);
 //读取图片的位置
 let imagePath = path.join(kejianPath, 'image/courseimg');
 
-async function toJs(reqData) {
+async function toJs(reqData, isApp2) {
 
     var readStr = fs.readFileSync(path.join(__dirname, '../static/finnalsourcedata.js'), 'utf-8');
     readStr = readStr.replace(`'$hello$'`, JSON.stringify(reqData));
 
     let myresult = await new Promise((resolve, reject) => {
 
-
+        if (isApp2) {
+            // tojspath
+            tojspath = path.join(__dirname, '../app2/data.js');
+        }
 
         fs.writeFile(tojspath, readStr, (err) => {
             if (err) {
