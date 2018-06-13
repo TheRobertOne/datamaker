@@ -179,6 +179,26 @@ function getSize(data, imageArr) {
         if (!item['data']['text']) {
             item['data']['text'] = '';
         }
+        if (item['type'] === 'playvoice') {
+            if (!item['data']['playVoiceArr']) {
+                item['data']['playVoiceArr'] = [];
+            }
+            item['data']['playVoiceArr'].map((h) => {
+                if (!h['pos']) {
+                    h['pos'] = {
+                        x: 0,
+                        y: 0
+                    }
+                }
+                h['image'] = h['name'];
+                if (!h['size']) {
+                    h['size'] = {
+                        w: 0,
+                        h: 0
+                    }
+                };
+            })
+        }
 
         let arr = [];
 
