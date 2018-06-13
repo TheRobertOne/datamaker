@@ -171,7 +171,11 @@ function getSize(data, imageArr) {
         if (!item['data']['body']) {
             item['data']['body'] = [];
         }
-        item['data']['text'] = '';
+
+        if (!item['data']['text']) {
+            item['data']['text'] = '';
+        }
+
         let arr = [];
 
         arr = item['data']['body'].filter((currentValue) => {
