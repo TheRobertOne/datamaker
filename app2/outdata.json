@@ -1,1605 +1,280 @@
 {
-    "lesson_title": "I love my dog",
-    "lesson_points": "什么动物是宠物，以及如何照顾自己的宠物。知道了要爱护小动物。",
+    "page_size": {
+        "w": 1280,
+        "h": 720
+    },
+    "lesson_title": "",
+    "lesson_points": "",
     "courseware": [
         {
-            "type": "display",
+            "type": "raildraw",
             "id": 1,
-            "state": "01",
-            "page": 0,
-            "content_type": "封面",
             "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 400,
-                    "y": 100
+                "config": {
+                    "scale": 3,
+                    "px": 200,
+                    "py": 0
                 },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": []
-            }
-        },
-        {
-            "type": "read",
-            "page": 1,
-            "content_type": 0,
-            "content": "Hello",
-            "id": 2,
-            "state": "02",
-            "overviewImage": "",
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 0,
-                    "y": 0
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/2.png",
-                "text": "Hello",
-                "text_pos": {
-                    "x": 412.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "survey",
-            "page": 2,
-            "content_type": "",
-            "content": "",
-            "id": 3,
-            "state": "07",
-            "data": {
-                "overviewImage": "",
-                "pos": {
-                    "x": 0,
-                    "y": 0
-                },
-                "title": "",
-                "titleImage": "./image/courseimg/3/3.png",
-                "text_pos": {
-                    "x": 301,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#000000",
-                "body": [
-                    {
-                        "text": "",
-                        "font_size": 68,
-                        "fill_color": "#0099ff",
-                        "image": "./image/courseimg/3/3-1.png",
-                        "name": "a",
-                        "nameNum": 0,
-                        "pos": {
-                            "x": 694,
-                            "y": 183
-                        },
-                        "size": {
-                            "w": 174,
-                            "h": 199
-                        }
-                    },
-                    {
-                        "text": "",
-                        "font_size": 68,
-                        "fill_color": "#0099ff",
-                        "image": "./image/courseimg/3/3-2.png",
-                        "name": "b",
-                        "nameNum": 0,
-                        "pos": {
-                            "x": 544,
-                            "y": 388
-                        },
-                        "size": {
-                            "w": 169,
-                            "h": 199
-                        }
-                    },
-                    {
-                        "text": "",
-                        "font_size": 68,
-                        "fill_color": "#0099ff",
-                        "image": "./image/courseimg/3/3-3.png",
-                        "name": "c",
-                        "nameNum": 0,
-                        "pos": {
-                            "x": 794,
-                            "y": 400
-                        },
-                        "size": {
-                            "w": 271,
-                            "h": 400
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 4,
-            "state": "01",
-            "page": 3,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/4.png",
-                        "pos": {
-                            "x": 244,
-                            "y": 90
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 5,
-            "state": "01",
-            "page": 4,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 5,
-            "content_type": 0,
-            "content": "pet",
-            "id": 6,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 555,
-                    "y": 173
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/6.png",
-                "text": "shoe shop",
-                "text_pos": {
-                    "x": 435,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 7,
-            "state": "01",
-            "page": 6,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 7,
-            "content_type": 0,
-            "content": "cats",
-            "id": 8,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 555,
-                    "y": 173
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/8.png",
-                "text": "cats",
-                "text_pos": {
-                    "x": 435,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "choice",
-            "page": 8,
-            "content_type": "",
-            "content": "",
-            "id": 9,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/9/9.png",
+                "letterColorOne": "#ffffff",
+                "letterColorTwo": "#965D11",
                 "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 225.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "",
-                "pos": {
-                    "x": 245,
-                    "y": 531
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/9/9-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/9/9-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/9/9-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    }
-                ],
-                "answer": 1
-            }
-        },
-        {
-            "type": "display",
-            "id": 10,
-            "state": "01",
-            "page": 9,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 10,
-            "content_type": 0,
-            "content": "hamsters",
-            "id": 11,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 245,
-                    "y": 529
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/11.png",
-                "text": "hamsters",
-                "text_pos": {
-                    "x": 397.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "choice",
-            "page": 11,
-            "content_type": "",
-            "content": "",
-            "id": 12,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/12/12.png",
-                "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 209.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "",
-                "pos": {
-                    "x": 245,
-                    "y": 531
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/12/12-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/12/12-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/12/12-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    }
-                ],
-                "answer": 0
-            }
-        },
-        {
-            "type": "display",
-            "id": 13,
-            "state": "01",
-            "page": 12,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 13,
-            "content_type": 0,
-            "content": "dogs",
-            "id": 14,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 245,
-                    "y": 529
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/14.png",
-                "text": "dogs",
-                "text_pos": {
-                    "x": 424.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "choice",
-            "page": 14,
-            "content_type": "",
-            "content": "",
-            "id": 15,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/15/15.png",
-                "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 225.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "",
-                "pos": {
-                    "x": 245,
-                    "y": 531
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/15/15-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/15/15-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/15/15-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 213,
-                            "h": 119
-                        }
-                    }
-                ],
-                "answer": 2
-            }
-        },
-        {
-            "type": "display",
-            "id": 16,
-            "state": "01",
-            "page": 15,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "survey",
-            "page": 16,
-            "content_type": "",
-            "content": "",
-            "id": 17,
-            "state": "07",
-            "data": {
-                "overviewImage": "",
-                "pos": {
-                    "x": 0,
-                    "y": 0
-                },
-                "title": "",
-                "titleImage": "./image/courseimg/17/17.png",
-                "text_pos": {
-                    "x": 163.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#000000",
-                "body": [
-                    {
-                        "text": "",
-                        "font_size": 68,
-                        "fill_color": "#0099ff",
-                        "image": "./image/courseimg/17/17-1.png",
-                        "name": "a",
-                        "nameNum": 0,
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 174,
-                            "h": 199
-                        }
-                    },
-                    {
-                        "text": "",
-                        "font_size": 68,
-                        "fill_color": "#0099ff",
-                        "image": "./image/courseimg/17/17-2.png",
-                        "name": "b",
-                        "nameNum": 0,
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 169,
-                            "h": 199
-                        }
-                    },
-                    {
-                        "text": "",
-                        "font_size": 68,
-                        "fill_color": "#0099ff",
-                        "image": "./image/courseimg/17/17-3.png",
-                        "name": "c",
-                        "nameNum": 0,
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 271,
-                            "h": 400
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 17,
-            "content_type": 2,
-            "content": "I love dogs.",
-            "id": 18,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 245,
-                    "y": 531
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/18.png",
-                "text": "I love dogs.",
-                "text_pos": {
-                    "x": 381.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 19,
-            "state": "01",
-            "page": 18,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/19/19-1.png",
-                        "pos": {
+                "title": [],
+                "other_images": [],
+                "body": [],
+                "timeout": 9,
+                "Pdata": [
+                    [
+                        {
                             "x": 241,
-                            "y": 552
-                        }
-                    },
-                    {
-                        "image": "./image/courseimg/19/19.png",
-                        "pos": {
-                            "x": 343,
-                            "y": 90
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 20,
-            "state": "01",
-            "page": 19,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 21,
-            "state": "01",
-            "page": 20,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/21.png",
-                        "pos": {
-                            "x": 161,
-                            "y": 552
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "choice",
-            "page": 21,
-            "content_type": "",
-            "content": "",
-            "id": 22,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/22/22.png",
-                "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 328.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "./image/courseimg/22/22-4.png",
-                "pos": {
-                    "x": 115,
-                    "y": 448
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/22/22-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
+                            "y": 101.5
                         },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/22/22-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
+                        {
+                            "x": 237.70837037037037,
+                            "y": 95.79192592592592
                         },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/22/22-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
+                        {
+                            "x": 234.05362962962963,
+                            "y": 90.56874074074074
                         },
-                        "size": {
-                            "w": 249,
-                            "h": 63
+                        {
+                            "x": 230.066,
+                            "y": 85.832
+                        },
+                        {
+                            "x": 225.7757037037037,
+                            "y": 81.58325925925925
+                        },
+                        {
+                            "x": 221.21296296296296,
+                            "y": 77.82407407407408
+                        },
+                        {
+                            "x": 216.40800000000002,
+                            "y": 74.55600000000001
+                        },
+                        {
+                            "x": 211.39103703703705,
+                            "y": 71.7805925925926
+                        },
+                        {
+                            "x": 206.1922962962963,
+                            "y": 69.4994074074074
+                        },
+                        {
+                            "x": 200.84199999999998,
+                            "y": 67.714
+                        },
+                        {
+                            "x": 195.37037037037038,
+                            "y": 66.42592592592592
+                        },
+                        {
+                            "x": 189.80762962962964,
+                            "y": 65.63674074074075
+                        },
+                        {
+                            "x": 184.184,
+                            "y": 65.34800000000001
+                        },
+                        {
+                            "x": 178.52970370370372,
+                            "y": 65.56125925925926
+                        },
+                        {
+                            "x": 172.87496296296297,
+                            "y": 66.27807407407407
+                        },
+                        {
+                            "x": 167.25,
+                            "y": 67.5
+                        },
+                        {
+                            "x": 161.68503703703703,
+                            "y": 69.22859259259259
+                        },
+                        {
+                            "x": 156.2102962962963,
+                            "y": 71.4654074074074
+                        },
+                        {
+                            "x": 150.856,
+                            "y": 74.212
+                        },
+                        {
+                            "x": 145.65237037037036,
+                            "y": 77.46992592592592
+                        },
+                        {
+                            "x": 140.62962962962962,
+                            "y": 81.24074074074073
+                        },
+                        {
+                            "x": 135.818,
+                            "y": 85.526
+                        },
+                        {
+                            "x": 131.2477037037037,
+                            "y": 90.32725925925925
+                        },
+                        {
+                            "x": 126.94896296296295,
+                            "y": 95.64607407407408
+                        },
+                        {
+                            "x": 122.95200000000001,
+                            "y": 101.48400000000001
+                        },
+                        {
+                            "x": 119.28703703703704,
+                            "y": 107.84259259259255
+                        },
+                        {
+                            "x": 115.9842962962963,
+                            "y": 114.7234074074074
+                        },
+                        {
+                            "x": 113.074,
+                            "y": 122.12799999999999
+                        },
+                        {
+                            "x": 110.58637037037036,
+                            "y": 130.0579259259259
+                        },
+                        {
+                            "x": 108.55162962962964,
+                            "y": 138.5147407407407
+                        },
+                        {
+                            "x": 107,
+                            "y": 147.49999999999997
+                        },
+                        {
+                            "x": 106,
+                            "y": 155.5
+                        },
+                        {
+                            "x": 105.67125925925926,
+                            "y": 166.27112962962963
+                        },
+                        {
+                            "x": 105.9634074074074,
+                            "y": 176.38903703703704
+                        },
+                        {
+                            "x": 106.844,
+                            "y": 185.8605
+                        },
+                        {
+                            "x": 108.2805925925926,
+                            "y": 194.6922962962963
+                        },
+                        {
+                            "x": 110.24074074074073,
+                            "y": 202.8912037037037
+                        },
+                        {
+                            "x": 112.692,
+                            "y": 210.464
+                        },
+                        {
+                            "x": 115.60192592592593,
+                            "y": 217.41746296296296
+                        },
+                        {
+                            "x": 118.93807407407408,
+                            "y": 223.75837037037036
+                        },
+                        {
+                            "x": 122.668,
+                            "y": 229.49349999999998
+                        },
+                        {
+                            "x": 126.75925925925925,
+                            "y": 234.62962962962962
+                        },
+                        {
+                            "x": 131.1794074074074,
+                            "y": 239.17353703703702
+                        },
+                        {
+                            "x": 135.89600000000002,
+                            "y": 243.132
+                        },
+                        {
+                            "x": 140.8765925925926,
+                            "y": 246.5117962962963
+                        },
+                        {
+                            "x": 146.08874074074072,
+                            "y": 249.31970370370368
+                        },
+                        {
+                            "x": 151.5,
+                            "y": 251.5625
+                        },
+                        {
+                            "x": 157.0779259259259,
+                            "y": 253.24696296296295
+                        },
+                        {
+                            "x": 162.79007407407408,
+                            "y": 254.37987037037038
+                        },
+                        {
+                            "x": 168.60399999999998,
+                            "y": 254.96799999999996
+                        },
+                        {
+                            "x": 174.48725925925928,
+                            "y": 255.0181296296296
+                        },
+                        {
+                            "x": 180.4074074074074,
+                            "y": 254.53703703703704
+                        },
+                        {
+                            "x": 186.332,
+                            "y": 253.53150000000002
+                        },
+                        {
+                            "x": 192.22859259259258,
+                            "y": 252.00829629629632
+                        },
+                        {
+                            "x": 198.06474074074072,
+                            "y": 249.9742037037037
+                        },
+                        {
+                            "x": 203.808,
+                            "y": 247.43599999999998
+                        },
+                        {
+                            "x": 209.42592592592592,
+                            "y": 244.400462962963
+                        },
+                        {
+                            "x": 214.88607407407406,
+                            "y": 240.87437037037037
+                        },
+                        {
+                            "x": 220.156,
+                            "y": 236.86450000000005
+                        },
+                        {
+                            "x": 225.20325925925926,
+                            "y": 232.3776296296296
+                        },
+                        {
+                            "x": 229.99540740740738,
+                            "y": 227.4205370370371
+                        },
+                        {
+                            "x": 234.5,
+                            "y": 222
                         }
-                    }
+                    ]
                 ],
-                "answer": 0
-            }
-        },
-        {
-            "type": "read",
-            "page": 22,
-            "content_type": 2,
-            "content": "Feed my dog.",
-            "id": 23,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "./image/courseimg/23/23-1.png",
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/23/23.png",
-                "text": "Feed my dog.",
-                "text_pos": {
-                    "x": 328.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 24,
-            "state": "01",
-            "page": 23,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/24.png",
-                        "pos": {
-                            "x": 161,
-                            "y": 552
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "choice",
-            "page": 24,
-            "content_type": "",
-            "content": "",
-            "id": 25,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/25/25.png",
-                "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 328.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "./image/courseimg/25/25-4.png",
-                "pos": {
-                    "x": 115,
-                    "y": 448
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/25/25-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/25/25-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/25/25-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    }
-                ],
-                "answer": 1
-            }
-        },
-        {
-            "type": "read",
-            "page": 25,
-            "content_type": 2,
-            "content": "Play with my dog.",
-            "id": 26,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "./image/courseimg/26/26-1.png",
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/26/26.png",
-                "text": "Play with my dog.",
-                "text_pos": {
-                    "x": 315.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 27,
-            "state": "01",
-            "page": 26,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/27.png",
-                        "pos": {
-                            "x": 161,
-                            "y": 552
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "choice",
-            "page": 27,
-            "content_type": "",
-            "content": "",
-            "id": 28,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/28/28.png",
-                "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 328.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "./image/courseimg/28/28-4.png",
-                "pos": {
-                    "x": 115,
-                    "y": 448
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/25/25-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/25/25-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/25/25-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    }
-                ],
-                "answer": 2
-            }
-        },
-        {
-            "type": "read",
-            "page": 28,
-            "content_type": 2,
-            "content": "Walk my dog.",
-            "id": 29,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/29.png",
-                "text": "Walk my dog.",
-                "text_pos": {
-                    "x": 346,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 30,
-            "state": "01",
-            "page": 29,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 31,
-            "state": "01",
-            "page": 30,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/31.png",
-                        "pos": {
-                            "x": 161,
-                            "y": 552
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "choice",
-            "page": 31,
-            "content_type": "",
-            "content": "",
-            "id": 32,
-            "state": "04",
-            "data": {
-                "title": "",
-                "titleImage": "./image/courseimg/32/32.png",
-                "text": "",
-                "font_size": 42,
-                "fill_color": "#0a152a",
-                "text_pos": {
-                    "x": 328.5,
-                    "y": 90
-                },
-                "background": "",
-                "q_image": "./image/courseimg/32/32-4.png",
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "qAdimation": "",
-                "animation": "",
-                "body": [
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/32/32-1.png",
-                        "pos": {
-                            "x": 588,
-                            "y": 206
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/32/32-2.png",
-                        "pos": {
-                            "x": 460,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    },
-                    {
-                        "text": "",
-                        "voice": "",
-                        "allow": true,
-                        "image": "./image/courseimg/32/32-3.png",
-                        "pos": {
-                            "x": 730,
-                            "y": 452
-                        },
-                        "size": {
-                            "w": 249,
-                            "h": 63
-                        }
-                    }
-                ],
-                "answer": 0
-            }
-        },
-        {
-            "type": "display",
-            "id": 33,
-            "state": "01",
-            "page": 32,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 33,
-            "content_type": 2,
-            "content": "Wash my dog.",
-            "id": 34,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "",
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/34.png",
-                "text": "Wash my dog.",
-                "text_pos": {
-                    "x": 315.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 35,
-            "state": "01",
-            "page": 34,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "read",
-            "page": 35,
-            "content_type": 2,
-            "content": "I love my dog.",
-            "id": 36,
-            "state": "02",
-            "overviewImage": "",
-            "pos": {
-                "x": 18,
-                "y": 458
-            },
-            "data": {
-                "image": "./image/courseimg/36/36-1.png",
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "title": "",
-                "text_Image": "./image/courseimg/36/36.png",
-                "text": "I love my dog.",
-                "text_pos": {
-                    "x": 315.5,
-                    "y": 90
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "read",
-            "page": 36,
-            "content_type": 1,
-            "content": "",
-            "id": 37,
-            "state": "111",
-            "data": {
-                "image": "./image/courseimg/37/37-1.png",
-                "overviewImage": "./image/courseimg/37/37.png",
-                "overviewImage_pos": {
-                    "x": 286.5,
-                    "y": 90
-                },
-                "pos": {
-                    "x": 161,
-                    "y": 552
-                },
-                "title": "",
-                "text": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0099ff",
-                "body": []
-            }
-        },
-        {
-            "type": "display",
-            "id": 38,
-            "state": "01",
-            "page": 37,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 39,
-            "state": "01",
-            "page": 38,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "./image/courseimg/39/39.png",
-                        "pos": {
-                            "x": 429.5,
-                            "y": 90
-                        }
-                    },
-                    {
-                        "image": "./image/courseimg/39/39-1.png",
-                        "pos": {
-                            "x": 161,
-                            "y": 552
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "type": "display",
-            "id": 40,
-            "state": "01",
-            "page": 39,
-            "content_type": "",
-            "data": {
-                "background_image": "",
-                "overviewImage": "",
-                "pos": {
-                    "x": 18,
-                    "y": 458
-                },
-                "title": "",
-                "text_pos": {
-                    "x": 460,
-                    "y": 30
-                },
-                "font_size": 68,
-                "fill_color": "#0a152a",
-                "body": [
-                    {
-                        "image": "",
-                        "pos": {
-                            "x": 0,
-                            "y": 0
-                        }
-                    }
-                ]
+                "name": "C"
             }
         }
     ]

@@ -5,5 +5,5 @@ module.exports = {
     isOldReact: false,
     isFinal: true,
     kejianPath: `/Users/pingyiluo/Desktop/Courseware/appdata/21days/home`,
-    is169: false
+    is169: true
 };

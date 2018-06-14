@@ -8,6 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <link rel="manifest" href="/app/2018-06-12/manifest.json">
     <link rel="shortcut icon" href="/app/2018-06-12/publicAsset/ibl.ico">
     <title>直播课堂</title>
@@ -193,7 +194,7 @@
     </div>
     <script src="./data.js"></script>
     <script src="/app/2018-06-12/lib/dsbridge.js"></script>
-    <script src="/app/2018-06-12/lib/phaser.js"></script>
+    <script src="/app/2018-06-12/lib/phaser.min.js"></script>
     <script type="text/javascript" src="/app/2018-06-12/static/js/main.js"></script>
 </body>
 <script>var myroot = document.getElementById("root"), ration = window.innerWidth / window.innerHeight, sRation = 1280 / 720; myroot.className = sRation < ration ? "root_height" : "", window.addEventListener("resize", function () { var e = document.getElementById("root"), n = window.innerWidth / window.innerHeight; e.className = 1280 / 720 < n ? "root_height" : "" }); var abcRefresh = document.getElementById("refreshBox"); abcRefresh.addEventListener("click", function () { window.location.reload() }), abcRefresh.addEventListener("touchstart", function () { window.location.reload() }), window.refreshtimer = setTimeout(function () { var e = window.document.querySelector(".abc_time_loading_fail_loading"), n = window.document.querySelector(".abc_time_loading_is_loading"); e.style.display = "block", n.style.display = "none" }, 2e4)</script>
