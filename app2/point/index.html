@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>坐标录入系统</title>
+
+    <meta name="viewport" content="width=device-width">
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        @font-face {
+            font-family: rounded;
+            /*这里是说明调用来的字体名字*/
+            /*src: url('din-next-rounded-lt-pro.otf'); !*这里是字体文件路径*!*/
+            src: url('ziti.ttf');
+        }
+
+        #front {
+            box-shadow: 0 5px 40px black;
+            margin: 0;
+            cursor: crosshair;
+            user-select: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #text1 {
+            margin: 0;
+            font-family: "rounded";
+            display: block;
+            font-size: 700px;
+            width: 640px;
+            height: 1000px;
+            line-height: 700px;
+            text-align: center;
+            border: solid 1px red;
+            position: absolute;
+            top: 0px;
+            color: #ccc;
+            z-index: -1;
+            user-select: none;
+
+        }
+
+        #b_c1,
+        #b_c2 {
+            width: 46px;
+            height: 46px;
+            background: #eeffaa;
+            border-radius: 46px;
+            position: absolute;
+            color: red;
+            display: none;
+            z-index: 10;
+            font-size: 46px;
+            text-align: center;
+            line-height: 46px;
+            cursor: move;
+            user-select: none;
+        }
+
+        #yuan {
+            width: 92px;
+            height: 92px;
+            background: blue;
+            opacity: 0.4;
+            border-radius: 92px;
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+            border: solid red 1px;
+            font-size: 92px;
+            text-align: center;
+            line-height: 92px;
+            user-select: none;
+
+        }
+
+        #show {
+            position: absolute;
+            left: 760px;
+            border: solid 1px blueviolet;
+        }
+
+        #butt1 {
+            position: absolute;
+            top: 330px;
+            left: 760px;
+        }
+
+        #butt1 input {
+            width: 200px;
+            height: 30px;
+            background: #aabbcc;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="front" width="640" height="1000"></canvas>
+    <span id="text1">B</span>
+
+    <canvas id="show" width="320" height="320"></canvas>
+    <div id="butt1">
+        <p>
+            <input type="button" id="cancel" value="撤销">
+        </p>
+        <p>
+            <input type="button" value="新起一笔" id="next">
+
+        </p>
+        <p>
+            坐标数量：
+            <input type="text" id="point_num" value="30">
+
+
+            <input type="button" value="开启贝塞尔曲线模式" id="switch_b">
+        </p>
+        <p>
+            <input type="text" value="B" id="con" style="color:#000;font-size:38px;line-height:40px;text-align:center;margin:0;height:38px;background: #fff;border:solid #ccc 1px;width: 40px;">
+            <br>
+            <input type="button" value="重新录入" id="start">
+        </p>
+
+        <p>
+            <select id="cat_id">
+                <option value="1">大写字母</option>
+                <option value="2">小写字母</option>
+                <option value="3">数字</option>
+                <option value="4">图形</option>
+                <option value="5">简笔画</option>
+            </select>
+            <input type="button" value="上传坐标到服务器" id="save">
+        </p>
+
+    </div>
+
+
+    <div id="yuan">
+        <span style="cursor: crosshair;"> </span>
+    </div>
+
+    <div id="b_c1">
+        <span style="cursor: move;user-select: none; ">1</span>
+    </div>
+    <div id="b_c2">
+        <span style="cursor: move;user-select: none; ">2</span>
+    </div>
+
+    <script>
+        var canvas0 = document.getElementById("front");
+        var ctx = canvas0.getContext("2d");
+        var canvas1 = document.getElementById("show");
+
+        var ctx1 = canvas1.getContext("2d");
+        var history = [];
+        var history_step = 0;
+        var imgData;
+        var posData = [];
+        var line_num = 0;
+        var is_b = false;   //贝塞尔曲线模式
+        var c1_down = false;
+        var c2_down = false;
+
+        $('#line').click(function () {
+            add_line();
+            line_num++;
+            $(this).val("用最后2个点填充直线(" + line_num + ")");
+            console.log(posData);
+        });
+
+
+
+        $('#start').click(function () {
+            $('#text1').text($('#con').val());
+            history = [];
+            history_step = 0;
+            imgData = [];
+            posData = [];
+
+            test();
+            ctx.clearRect(0, 0, 640, 640);
+
+        });
+
+        $('#switch_b').click(function () {
+            if (!is_b) {
+                start_b(this);
+            } else {
+                end_b(this);
+            }
+        });
+
+        $('#b_c1').on('mousedown', function () {
+            c1_down = true;
+        });
+
+        $('#b_c1').on('mousemove', function (e) {
+            console.log(e);
+            if (!is_b || !c1_down) {
+                return
+            }
+            var pos = getPos(e);
+            $('#b_c1').css({ 'top': pos.y - 23, 'left': pos.x - 23 });
+            draw_b();
+        });
+        $('#b_c1').on('mouseup', function () {
+            c1_down = false;
+        });
+
+        $('#b_c2').on('mousedown', function () {
+            c2_down = true;
+        });
+
+        $('#b_c2').on('mousemove', function (e) {
+            if (!is_b || !c2_down) {
+                return
+            }
+            var pos = getPos(e);
+            $('#b_c2').css({ 'top': pos.y - 23, 'left': pos.x - 23 });
+            draw_b();
+        });
+        $('#b_c2').on('mouseup', function () {
+            c2_down = false;
+        });
+
+        function draw_b() {
+            var pos2 = posData[posData.length - 1];
+            var pos1 = posData[posData.length - 2];
+
+            var c1 = { x: $('#b_c1').offset().left + 23, y: $('#b_c1').offset().top + 23 };
+            var c2 = { x: $('#b_c2').offset().left + 23, y: $('#b_c2').offset().top + 23 };
+            ctx.putImageData(history[history_step - 1], 0, 0);
+
+            ctx.beginPath();
+            ctx.moveTo(pos1.x, pos1.y);
+
+            ctx.lineCap = 'round';
+            ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, pos2.x, pos2.y);
+            ctx.stroke();
+
+        }
+
+        //开启贝塞尔曲线
+        function start_b(T) {
+            var pos2 = posData[posData.length - 1];
+            var pos1 = posData[posData.length - 2];
+            if (pos1 == undefined || pos2 == undefined || pos1.x == undefined || pos2.x == undefined) {
+                alert('最后2点不为坐标，无法启动贝塞尔曲线模式');
+                return;
+            }
+
+            is_b = true;
+            $('#yuan').hide();
+            $('#b_c1').show().css({ 'top': pos1.y - 23, 'left': pos1.x - 23 });
+            $('#b_c2').show().css({ 'top': pos2.y - 23, 'left': pos2.x - 23 });
+            $(T).val('结束贝塞尔模式并生成曲线');
+
+            saveCanvas();
+
+            ctx.lineWidth = 60;
+        }
+
+        //结束贝塞尔曲线
+        function end_b(T) {
+
+            var pos2 = posData[posData.length - 1];
+            var pos1 = posData[posData.length - 2];
+
+            var c1 = { x: $('#b_c1').offset().left + 23, y: $('#b_c1').offset().top + 23 };
+            var c2 = { x: $('#b_c2').offset().left + 23, y: $('#b_c2').offset().top + 23 };
+
+            is_b = false;
+            $('#yuan').show();
+            $('#b_c1').hide();
+            $('#b_c2').hide();
+            $(T).val('开启贝塞尔曲线模式');
+            history_step--;
+            ctx.putImageData(history[history_step], 0, 0);
+
+            ctx.lineWidth = 1;
+
+            build_b(pos1, c1, c2, pos2);
+        }
+
+        //根据贝塞尔算法生成坐标
+        function build_b(pos1, pos2, pos3, pos4) {
+
+            //撤销最后的2个点
+            cancel();
+            cancel();
+
+            var cp = [pos1, pos2, pos3, pos4];
+
+            var nums = $('#point_num').val();
+            var t1 = 1 / nums;
+            for (var t = 0; t < 1; t = t + t1) {
+                var pos = PointOnCubicBezier(cp, t);
+                click_point(pos);
+            }
+        }
+
+        //贝塞尔曲线算法
+        function PointOnCubicBezier(cp, t) {
+            var ax, bx, cx;
+            var ay, by, cy;
+            var tSquared, tCubed;
+            var result = { x: 0, y: 0 };
+
+            /*計算多項式係數*/
+
+            cx = 3.0 * (cp[1].x - cp[0].x);
+            bx = 3.0 * (cp[2].x - cp[1].x) - cx;
+            ax = cp[3].x - cp[0].x - cx - bx;
+
+            cy = 3.0 * (cp[1].y - cp[0].y);
+            by = 3.0 * (cp[2].y - cp[1].y) - cy;
+            ay = cp[3].y - cp[0].y - cy - by;
+
+            /*計算位於參數值t的曲線點*/
+
+            tSquared = t * t;
+            tCubed = tSquared * t;
+
+            result.x = (ax * tCubed) + (bx * tSquared) + (cx * t) + cp[0].x;
+            result.y = (ay * tCubed) + (by * tSquared) + (cy * t) + cp[0].y;
+
+            return result;
+        }
+
+        function test() {
+            //转换坐标
+            ctx1.clearRect(0, 0, 320, 320);
+            ctx1.lineWidth = 60;
+            ctx1.lineCap = 'round';
+            ctx1.lineJoin = 'round';
+            ctx1.beginPath();
+            for (var i = 0; i < posData.length; i++) {
+                var current_step = posData[i];
+                var next_step = posData[i + 1];
+
+
+                if (next_step == 'end' || next_step == 'next' || next_step == undefined) {
+
+                    console.log('完成一笔');
+                    ctx1.stroke();
+                    if (next_step == 'end') {
+                        return;
+                    }
+                    continue;
+                }
+                if (current_step == 'next') {
+                    ctx1.beginPath();
+                    continue;
+                } else {
+                    ctx1.stroke();
+                }
+                ctx1.moveTo(current_step.x / 2, current_step.y / 2);
+                ctx1.lineTo(next_step.x / 2, next_step.y / 2);
+            }
+
+        }
+
+
+
+        function saveCanvas() {
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+            imgData = ctx.getImageData(0, 0, width, height);
+            history[history_step] = imgData;
+            history_step++;
+        }
+
+        function cancel() {
+            if (is_b) {
+                return;
+            }
+            var pos = posData.pop();
+            if (pos == 'next') {
+                posData.push(pos);
+                alert('新笔画无数据，不可撤销');
+                return false;
+            }
+            if (history_step < 1) {
+                return false;
+            }
+            history_step--;
+            ctx.putImageData(history[history_step], 0, 0);
+            test();
+            return pos;
+
+        }
+
+        var game = {
+            drawing: false
+        };
+
+
+        function getPos(e) {
+            return {
+                x: e.pageX,
+                y: e.pageY
+            }
+
+
+        };
+        function drwa_arc(pos) {
+            ctx.beginPath();
+            ctx.fillStyle = 'red';
+            ctx.arc(pos.x, pos.y, 46, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, 1, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.strokeStyle = "red";
+            ctx.beginPath();
+            ctx.arc(pos.x, pos.y, 23, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.strokeStyle = "#000000";
+        }
+        $('#cancel').click(function () {
+            cancel();
+
+        });
+
+        $('#next').click(function () {
+            if (posData.length == 0) {
+
+                return;
+            }
+            if (posData[posData.length - 1] == 'next') {
+                alert('已经开始新的一笔了');
+                return;
+            }
+            posData.push('next');
+        });
+        $('#print').click(function () {
+            $('#poss').text(JSON.stringify(posData));
+        });
+        $("#front").on('mousedown', function (e) {
+            if (is_b) {
+                return;
+            }
+            var pos = getPos(e);
+            click_point(pos);
+        });
+
+        function click_point(pos) {
+            saveCanvas();
+            drwa_arc(pos);
+            posData.push(pos);
+            test();
+        }
+
+        $("#front").on('mousemove', function (e) {
+            if (is_b) {
+                return;
+            }
+            var pos = getPos(e);
+            $("#yuan").css('top', pos.y - 46);
+            $("#yuan").css('left', pos.x - 46);
+
+        });
+        $("#front").on('mouseup', function (e) {
+        });
+
+
+        function add_line() {
+            if (posData.length < 2) {
+                return;
+            }
+
+            var pos2 = cancel();
+            var pos1 = cancel();
+
+            if (pos1.x !== undefined && pos2.x !== undefined) {
+                line_pos = build_xy(pos1, pos2);
+                for (var i in line_pos) {
+                    click_point(line_pos[i]);
+                }
+            }
+
+        }
+        function build_xy(pos1, pos2) {
+            //求出一次方程
+            if (pos2.x - pos1.x == 0) {
+                var a = 0;
+            } else {
+                var a = (pos2.y - pos1.y) / (pos2.x - pos1.x);
+            }
+
+            var b = pos1.y - a * pos1.x;
+            var pos = [];
+
+
+            if (Math.abs(pos2.x - pos1.x) > Math.abs(pos2.y - pos1.y)) {
+
+                //通过迭代x产生坐标
+                if (pos2.x > pos1.x) {
+                    for (var i = pos1.x; i <= pos2.x; i = i + 10) {
+                        var p = { x: i, y: 0 };
+                        p.y = a * i + b;
+                        pos.push(p);
+                    }
+                } else if (pos2.x < pos1.x) {
+                    for (var i = pos1.x; i > pos2.x; i = i - 10) {
+                        var p = { x: i, y: 0 };
+                        p.y = a * i + b;
+                        pos.push(p);
+                    }
+                }
+            } else {
+                if (pos2.y > pos1.y) {
+                    for (var i = pos1.y; i <= pos2.y; i = i + 10) {
+                        var p = { x: pos1.x, y: i };
+                        if (a != 0) {
+                            p.x = (i - b) / a;
+                        }
+                        pos.push(p);
+                    }
+                } else if (pos2.y < pos1.y) {
+                    for (var i = pos1.y; i > pos2.y; i = i - 10) {
+                        var p = { x: pos1.x, y: i };
+                        if (a != 0) {
+                            p.x = (i - b) / a;
+                        }
+                        pos.push(p);
+                    }
+                }
+            }
+
+
+
+            return pos
+        }
+
+        build_xy({ x: 1, y: 10 }, { x: 1, y: 50 });
+
+
+        $('#save').click(function () {
+            var points = converPoint(posData);
+            save(points, $('#con').val());
+        });
+
+        function converPoint(poss) {
+            var steps = [];
+            var step = [];
+            for (var i = 0; i <= poss.length; i++) {
+                if (poss[i] == 'next' || poss[i] == undefined) {
+                    steps.push(step);
+                    step = [];
+                } else {
+
+                    step.push([poss[i].x / 2, poss[i].y / 2]);
+                }
+            }
+            return steps;
+        }
+
+        function save(points, title) {
+
+            var cid = $('#cat_id').val();
+            console.log(JSON.stringify(points))
+            // $.ajax({
+            //     'url':'https://x.aaaaa.cn/api/points/add',
+            //     'method':'post',
+            //     'data':JSON.stringify(points),
+            //     'dataType':'json',
+            //     'success':function(r){
+            //         if(r.status == 1001){
+            //             alert('保存成功');
+            //         }else{
+            //             alert('保存失败');
+            //         }
+            //     },
+            //     'error':function (r) {
+            //         alert('保存失败');
+            //     }
+            // })
+            // $.ajax({
+            //     'url':'https://x.firstleap.cn/api/points/add',
+            //     'method':'post',
+            //     'data':{cid:cid,title:title,points:JSON.stringify(points)},
+            //     'dataType':'json',
+            //     'success':function(r){
+            //         if(r.status == 1001){
+            //             alert('保存成功');
+            //         }else{
+            //             alert('保存失败');
+            //         }
+            //     },
+            //     'error':function (r) {
+            //         alert('保存失败');
+            //     }
+            // })
+        }
+
+    </script>
+</body>
+
+</html>
