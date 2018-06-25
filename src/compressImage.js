@@ -26,12 +26,15 @@ function getDirs(dir, arr) {
 function compressImage(tostr) {
     let arr = getDirs(path.join(__dirname, 'image'), []);
 
+    let d = new Date();
+
+    console.log(d.getTime());
 
     arr.map((item, index) => {
 
-        let temStr = item.replace('datamaker/src', 'datamaker/'+tostr);
+        let temStr = item.replace('datamaker/src', 'datamaker/' + tostr);
         imagemin([item + '/*.png'], temStr, { use: [imageminPngquant()] }).then(() => {
-            console.log('Images optimized');
+            console.log('Images optimized-----' + index);
 
         });
     });
